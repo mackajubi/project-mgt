@@ -1,0 +1,24 @@
+<main [ngClass]="{'fullscreen': fullscreen}">
+    <header>
+        <button mat-button tabindex="-1" [matTooltip]="!fullscreen ? 'Expand' : 'Restore'" (click)="onToggleFullscreen()">
+            <mat-icon class="action-btn-icon">{{ !fullscreen ? 'open_in_full' : 'close_fullscreen' }}</mat-icon>
+        </button>
+        
+        <h4 matTooltip="Click to see details" (click)="onVeiwDetails()">{{ title }}</h4>
+
+        <!-- <button 
+            mat-button
+            [matMenuTriggerFor]="settingsMenu"
+            class="icon-btn">
+                <mat-icon>settings</mat-icon>
+        </button>           -->
+    </header> 
+
+    <section>
+        <div class="{{ title }}-graph">Loading...</div>
+    </section> 
+
+    <!-- <mat-menu class="tasks-menu" #settingsMenu="matMenu" yPosition="below" xPosition="before" [overlapTrigger]="false">
+        <
+    </mat-menu>     -->
+</main>

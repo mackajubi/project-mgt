@@ -1,0 +1,82 @@
+127.0.0.1 - - [29/Sep/2023 17:05:11]  "POST /ProjectMgt/0.0.1/Project? http" 
+400 Bad Request: The browser (or proxy) sent a request that this server could not understand. 
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 100, in validate
+    validator.validate(data)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\jsonschema\validators.py", line 353, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 0 is not of type 'string'
+
+Failed validating 'type' in schema['properties']['RoadLength']:
+    {'type': 'string'}
+
+On instance['RoadLength']:
+    0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 42, in dispatch_request
+    self.validate_payload(meth)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 88, in validate_payload
+    self.__validate_payload(expect, collection=False)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 73, in __validate_payload
+    expect.validate(data, self.api.refresolver, self.api.format_checker)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 103, in validate
+    errors=dict(self.format_error(e) for e in validator.iter_errors(data)))
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\errors.py", line 31, in abort
+    flask.abort(code)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 772, in abort
+    return _aborter(status, *args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 753, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+~
+Exception on /ProjectMgt/0.0.1/Project [POST]
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 100, in validate
+    validator.validate(data)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\jsonschema\validators.py", line 353, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 0 is not of type 'string'
+
+Failed validating 'type' in schema['properties']['RoadLength']:
+    {'type': 'string'}
+
+On instance['RoadLength']:
+    0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 42, in dispatch_request
+    self.validate_payload(meth)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 88, in validate_payload
+    self.__validate_payload(expect, collection=False)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 73, in __validate_payload
+    expect.validate(data, self.api.refresolver, self.api.format_checker)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 103, in validate
+    errors=dict(self.format_error(e) for e in validator.iter_errors(data)))
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\errors.py", line 31, in abort
+    flask.abort(code)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 772, in abort
+    return _aborter(status, *args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 753, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

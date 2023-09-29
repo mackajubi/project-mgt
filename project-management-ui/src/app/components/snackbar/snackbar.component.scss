@@ -1,0 +1,32 @@
+.sb-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 5px;
+    padding-left: 5px;
+    position: relative;
+    
+    p{
+        margin: 0px;
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: .4px;
+    }
+    
+    .close-btn{
+        min-width: 0px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        
+        .close-icon{
+            color: #232729;
+            font-size: 20px;
+        }
+    }
+}

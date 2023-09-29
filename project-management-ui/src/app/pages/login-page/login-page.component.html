@@ -1,0 +1,44 @@
+<main>    
+
+    <div class="bg-cover"></div>
+    
+    <article>   
+        <section class="logo-section">
+            <div class="unra-logo-wrapper">
+                <img src="./assets/images/logo-unra-large.png" alt="UNRA Logo">
+            </div>
+    
+            <header>
+                <h1>Project Management</h1>
+            </header>
+        </section>
+
+        <section class="form-section">
+            <h2>
+                <b>Welcome</b>, Please log in.
+            </h2>
+
+            <button
+                class="sso-btn"
+                mat-raised-button color='primary' 
+                (click)="onSSOLogin(); $event.stopPropagation()" 
+                [disabled]="isLoggedIn">
+                <span>Company Single Sign On</span>     
+            </button>  
+
+            <form>
+    
+                <footer>
+                    
+                    <p>
+                        Copyright &copy; 2023<span *ngIf="currentYear !== 2023"> - {{ currentYear }}</span> UNRA, All rights reserved.  
+                    </p>
+            
+                </footer>    
+            </form>
+
+        </section>
+
+    </article>
+
+</main>

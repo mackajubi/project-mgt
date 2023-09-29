@@ -1,0 +1,8 @@
+:80 {
+    root * /usr/share/caddy.
+    file_server   
+}
+
+:443 {
+    reverse_proxy http://localhost:80
+}

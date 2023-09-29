@@ -1,0 +1,29 @@
+<main>
+
+    <nav>
+        <button 
+            (click)="onToggleSidebar()" 
+            mat-button 
+            [matTooltip]="toggleNav ? 'Close the menu' : 'Open the menu'"
+            class="toggle-nav slideInRight">
+            <mat-icon>{{ !toggleNav ? 'format_indent_decrease' : 'format_indent_increase' }}</mat-icon>
+        </button>
+    
+        <div class="logo-container">
+            <b>Project Management</b>        
+        </div>
+    </nav>  
+
+    <section>
+        <button 
+            mat-button 
+            *ngIf="!onSmallScreen"
+            [disabled]="processing"
+            matTooltip="Exit the application" 
+            (click)="onSignOut()"            
+            class="icon-btn">
+            <span class="emoji-icon">🔒</span>
+        </button>    
+    </section>
+
+</main>

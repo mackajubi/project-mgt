@@ -1,0 +1,30 @@
+<main>   
+    <mat-drawer-container [hasBackdrop]="hasBackdrop">
+        <mat-drawer #drawer [mode]="mode" [ngClass]="{'no-box-shadow': mode === 'push'}">
+            <app-sidebar></app-sidebar>
+        </mat-drawer>
+        
+        <mat-drawer-content 
+            [ngClass]="{'drawer-opened': drawer.opened, 'full-width': drawer.opened && hasBackdrop}" 
+            [ngStyle]="{'z-index': drawer.opened ? 1 : 0}">
+
+            <div class="mat-progress-bar-container">
+                <mat-progress-bar color="primary" *ngIf="processing" mode="indeterminate"></mat-progress-bar>
+            </div>
+
+            <app-header 
+                [toggleNav]="drawer.opened" 
+                (toggleSidebar)="onToggleSidebar($event)" 
+                [ngStyle]="{'z-index': drawer.opened && hasBackdrop ? 0 : 1}">
+            </app-header>
+
+            <section class="router-outlet-wrapper main-scrollbar">
+                <app-breadcrumb></app-breadcrumb>
+                
+                <router-outlet *ngIf="loaded"></router-outlet>
+            </section>
+
+        </mat-drawer-content>
+
+    </mat-drawer-container>     
+</main>

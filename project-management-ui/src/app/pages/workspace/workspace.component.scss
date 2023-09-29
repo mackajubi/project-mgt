@@ -1,0 +1,116 @@
+main {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    mat-drawer-container {
+        display: grid;
+        grid-template-columns: 260px auto;
+        z-index: 0;
+    
+        mat-drawer {
+            width: 260px;
+            height: 100%;
+        }
+
+        .no-box-shadow {
+            box-shadow: none;
+        }
+
+        mat-drawer-content {
+            position: relative;
+            width: 100vw;
+            z-index: 0;
+            overflow: hidden;
+            // background-color: #f4f4f4;
+            // background-color: #f1f1f1;
+            background-color: #f4f4f2;
+            display: grid;
+            grid-template-rows: 60px auto;
+            grid-template-columns: auto;   
+            background-image: url('../../../assets/images/bg.png');  
+            background-size: auto;
+            background-repeat: repeat;                  
+            
+            // div {
+            //     background-color: rgba(250, 250, 250, 0.96);
+            //     position: absolute;
+            //     bottom: 0;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0;
+            // }  
+
+            .mat-progress-bar-container {
+                top: 56px;
+            }            
+            
+            section.router-outlet-wrapper {
+                width: calc(100vw - 30px);
+                // height: calc(100vh - 64px);
+                height: calc(100vh - 93px);
+                padding: 20px 15px 13px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+
+        .drawer-opened {
+            z-index: 1;
+            width: calc(100vw - 260px);
+
+            section.router-outlet-wrapper {
+                width: calc(100vw - 290px);
+            }               
+        }
+
+        .full-width {
+            width: 100vw;      
+            
+            section.router-outlet-wrapper {
+                width: calc(100vw - 30px);
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 640px) {
+    main {
+        
+        mat-drawer-container {
+
+            mat-drawer-content {
+                
+                section.router-outlet-wrapper {
+                    height: calc(100vh - 84px);
+                    width: calc(100vw - 20px);
+                    padding: 10px;
+                }
+            }  
+
+            .full-width {
+    
+                section.router-outlet-wrapper {
+                    width: calc(100vw - 20px);
+                }        
+            } 
+        } 
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+
+        mat-drawer-container {
+            // grid-template-columns: auto auto;
+
+            // mat-drawer {
+            //     width: 80%;
+            //     min-width: 207px;
+            //     max-width: 260px;
+            // }
+        }
+    }    
+}

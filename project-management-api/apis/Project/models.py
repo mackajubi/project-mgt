@@ -1,0 +1,27 @@
+from flask_restplus import fields
+
+project_model = {
+    'ProjectID': fields.Integer(required=True),
+    'ProjectNumber': fields.String(required=True),
+    'ProjectName': fields.String(required=True),
+    'RoadLength': fields.Integer(required=True),
+    'SurfaceType': fields.String(required=True),
+    'ProjectManager': fields.String(required=True),
+    'ProjectEngineer': fields.String(required=True),
+    'WorksSignatureDate': fields.String(required=True),
+    'CommencementDate': fields.String(required=True),
+    'WorksCompletionDate': fields.String(required=True),
+    'RevisedCompletionDate': fields.String(required=True),
+    'SupervisingConsultant': fields.String(required=True),
+    'SupervisionSignatureDate': fields.String(required=True),
+    'SupervisionCompletionDate': fields.String(required=True),
+    'SupervisingConsultantContractAmount': fields.String(required=True),
+    'RevisedSCContractAmount': fields.String(required=True),
+    'SupervisionProcurementNumber': fields.String(required=True),
+    'WorksContractAmount': fields.Integer(required=True),
+    'RevisedWorksContractAmount': fields.String(required=True),
+    'WorksContractor': fields.String(required=True),
+    'WorksProcurementNumber': fields.String(required=True),
+    'ProjectTypeID': fields.Integer(required=True),
+    'ProjectFunderID': fields.String(required=True),
+}

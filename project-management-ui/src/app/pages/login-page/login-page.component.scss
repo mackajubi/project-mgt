@@ -1,0 +1,322 @@
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f4f4f2;
+
+    div.bg-cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        // background: url('../../../assets/images/cool-background.png');
+        // background: url('../../../assets/images/wallpaper.jpg');
+        background: url('../../../assets/images/office-stationery.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+        filter: blur(2px);
+    }
+
+    .unra-logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        width: 225px;
+
+        img {
+            width: 100%;
+            filter: saturate(2);
+        }
+
+    }
+
+    article {
+        // width: 360px;
+        width: 890px;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        box-shadow: 0px 2px 2px -1px #0000007a;
+        height: 640px;
+        align-content: stretch;
+        gap: 0px;
+
+        section.logo-section {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            // background-image: linear-gradient(143deg,#16b43d, 79%, #fec72f);
+            width: 100%;
+            background-color: #18222f30;
+            background-color: #fbc8312e; 
+            background-color: #00000021;
+            // background: url('../../../assets/images/cool-background.png');
+            // background: url('../../../assets/images/wallpaper.jpg');
+            background: url('../../../assets/images/office-stationery.png');
+            // background: url('../../../assets/images/office-stationery2.png');
+            // background: url('../../../assets/images/cool-background-2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;            
+            
+            header {
+                min-height: 75px;
+                min-height: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                h1 {
+                    text-align: center;
+                    margin: 20px 0px;
+                    // color: #fff;
+                    font-weight: 500;
+                    font-size: 24px;
+                    padding: 10px;
+                    line-height: 24px;
+                    text-shadow: 0px 1px 3px #00000045;
+                    min-height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+            }            
+        }    
+        
+        section.form-section {
+            display: grid;
+            grid-gap: 0px;
+            padding: 30px 40px;
+            align-content: center;    
+            background-color: #fff; 
+            position: relative;            
+                
+            .sso-btn {
+                background-color: #fdc62f !important;
+                border-color: #fdc62f !important;   
+                border-radius: 30px;
+                margin: 15px 0px 20px;
+                border: 2px solid #16b43d;
+                background-color: #ffffff;
+                color: #000 !important;
+                letter-spacing: initial !important;
+                box-shadow: unset;                         
+            }
+
+            h2 {
+                font-weight: 300;
+
+                b {
+                    font-weight: 600;
+                }
+            }
+
+            form {
+                display: grid;
+                grid-gap: 15px;
+                align-content: center;    
+                position: absolute;
+                bottom: 10px;
+                right: 0;
+                left: 0;                
+    
+                div.divider {
+                    position: relative;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    margin-bottom: 15px;
+    
+                    hr {
+                        position: absolute;
+                        top: 14px;
+                        left: 0;
+                        right: 0;
+                        border: 0px;
+                        border-bottom: 1px solid #d0cbcb;                        
+                    }
+    
+                    p {
+                        width: 35px;
+                        background-color: #fff;
+                        font-size: 13px;
+                        font-weight: 400;
+                        font-style: italic;
+                        z-index: 1;
+                        text-align: center;
+                        padding-right: 5px;
+                        margin: 14px 0px 0px;                     
+                    }                    
+                }            
+    
+                button {
+                    border-radius: 30px;
+                    margin: 15px 0px 20px;
+                    border: 2px solid #16b43d;
+                    background-color: #ffffff;
+                    color: #000 !important;
+                    letter-spacing: initial !important;
+                    box-shadow: unset;
+    
+                    &:disabled {
+                        opacity: .5;
+                    }
+    
+                    &:hover {
+                        background-color: #f8f8f8;
+                    }
+                }            
+            }
+        }
+    
+        footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                margin: 0px;
+                font-size: 12px;
+                font-weight: 600;
+                // color: #fff;
+            }
+        }
+    }
+
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 920px) {
+    main {
+        
+        article {
+            width: calc(100% - 30px);
+            height: calc(100vh - 30px);
+
+            footer {
+                display: flex;
+                flex-direction: column; 
+                align-items: center;   
+                
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    main {
+        
+        article {
+
+            section.form-section {
+                padding: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 715px) {
+    main {
+        
+        div.bg-cover {
+            position: fixed;
+        }
+
+        article {
+
+            section.form-section {
+                padding: 18px;
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        overflow-y: auto;
+        
+        article {
+            display: grid;
+            grid-template-columns: auto;
+            align-content: center;
+            height: fit-content;
+
+            section.logo-section {
+                height: 160px;
+
+                .unra-logo-wrapper {
+
+                    img {
+                        width: 80%;                        
+                    }
+                }
+
+                header {
+                    min-height: 61px;
+
+                    h1 {
+                        margin: 0px;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            section.form-section {
+                padding: 18px;
+
+                h2 {
+                    text-align: center;          
+                    font-size: 20px;          
+                }
+
+                .sso-btn {
+                    margin: 0px 0px 0px;
+                }
+
+                div.divider {
+                    margin-bottom: 5px;                    
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 660px) and (max-width: 640px) {
+    main {
+
+        article {
+            height: calc(100vh - 30px);
+            display: block;
+
+            section.form-section {
+                margin-bottom: 18px;
+            }
+        }
+    }
+}
+
+@media (min-height: 660px) {
+    main {
+
+        article {
+            height: 600px;
+        }
+    }
+}

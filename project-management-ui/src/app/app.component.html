@@ -1,0 +1,9 @@
+<main>
+
+    <div *ngIf="processing" class="loading-wrapper">
+        <img src="./assets/loaders/loader_2.gif" alt="loading..."/>
+    </div> 
+    
+    <router-outlet *ngIf="!processing"></router-outlet>
+
+</main>

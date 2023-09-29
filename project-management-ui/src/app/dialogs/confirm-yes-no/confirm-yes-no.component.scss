@@ -1,0 +1,112 @@
+main {
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    overflow: hidden;
+    padding: 20px 30px 20px 30px;
+
+    .mat-icon {
+        font-size: 60px !important;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fbce08;
+    }
+
+    div {
+
+        h1 {
+            margin: 5px 0px 15px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0px;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: justify;
+        }
+
+        section.give-a-reason {
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+            width: 100%;
+
+            mat-form-field {
+                width: 100%;
+                margin: 15px 0px 0px;
+
+                mat-icon {
+                    font-size: 24px !important;
+                    color: #000 !important;
+                }
+            }
+        }
+
+        .btn-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 25px;
+
+            button {
+                border-radius: 20px;
+                min-width: 80px !important;
+                min-height: 40px !important;
+                
+                &:first-child {
+                    background-color: #F7F7F7;
+                }
+
+                &:last-child {
+                    background-color: #f4433624;
+                    border: 1px solid #f44336;                    
+                }
+            }
+        }
+    }
+}
+
+main.give-reason {
+    grid-template-rows: 60px auto;
+    grid-template-columns: auto;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 400px) {
+    main {
+        grid-template-columns: auto;
+        grid-gap: 10px 25px;    
+        padding: 15px;    
+
+        div {
+
+            h1 {
+                text-align: center;
+            }
+        }
+    }    
+}
+
+@media (max-width: 250px) {
+    main {
+
+        div {
+            
+            .btn-wrapper {
+                display: grid;
+                grid-gap: 15px;
+                justify-content: stretch;
+            }
+        }        
+    }    
+}

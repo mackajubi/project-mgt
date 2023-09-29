@@ -1,0 +1,45 @@
+<main [ngClass]="{'give-reason': message.give_a_reason.type === 'reason' }">
+  <mat-icon color="warn">warning</mat-icon>
+
+  <div>
+    <h1 [innerHTML]="message.title ? message.title :'Do you want to save the changes'"></h1>
+
+    <p *ngIf="message.text" [innerHTML]="message.text"></p>
+
+    <section class="give-a-reason" *ngIf="message.give_a_reason">
+
+      <mat-form-field class="fadeInUp _delay3ms" *ngIf="message.give_a_reason.type === 'password'">
+        <mat-label>New Password</mat-label>
+        <input matInput placeholder="Type your password" [formControl]="password" [type]=" hidePassword ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+      </mat-form-field> 
+         
+      <mat-form-field *ngIf="message.give_a_reason.type === 'reason'">
+        <mat-label>Leave a reason</mat-label>
+        <textarea #message matInput [formControl]="reason" placeholder="Ex. Apologies .." rows="7"></textarea>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+        <mat-error *ngIf="reason.invalid">{{ getReasonErrorMessage() }}</mat-error>
+      </mat-form-field>      
+    </section>
+
+    <div class="btn-wrapper">
+      <button 
+        mat-button 
+        tabindex="-1"
+        color="primary" 
+        (click)="onSave()" 
+        [disabled]="(message.give_a_reason && message.give_a_reason.type === 'password' && password.invalid) || (message.give_a_reason && message.give_a_reason.type === 'reason' && reason.invalid)">
+        {{ message.saveLabel ? message.saveLabel : 'Save' }}
+      </button>
+
+      <button 
+        color="warn" 
+        tabindex="1"
+        mat-button 
+        (click)="onCancel()">
+        {{ message.noLabel ? message.noLabel : 'Cancel' }}
+      </button>
+    </div>
+  </div>
+</main>

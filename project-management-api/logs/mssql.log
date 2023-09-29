@@ -1,0 +1,6 @@
+127.0.0.1 - - [29/Sep/2023 11:59:50]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\helpers\utils.py", line 81, in _do_select
+    cursor.execute(query, values)
+pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'tb_EmployeeTasks'. (208) (SQLExecDirectW)")
+~

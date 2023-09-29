@@ -1,0 +1,109 @@
+main {
+    height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fec731;
+    background-color: #68eb29;
+    background-color: #68eb298a;
+    padding-left: 20px;
+    text-transform: capitalize;
+    font-size: 11px;
+    font-weight: 300;
+    margin: -20px -15px 15px;
+    padding: 0px 0px 0px 20px;
+
+    div {
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        font-weight: 700;
+        opacity: .8;        
+
+        mat-icon {
+            width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            font-weight: 300;
+            // margin-bottom: 2px;                      
+        }
+
+        &:last-child {
+            // font-weight: 500;
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 640px) {
+    main {
+        margin: -10px -20px 10px;
+    }    
+}
+
+// main {
+//     height: 40px;
+//     height: 70px;
+//     position: relative;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-between;
+//     background-color: #fec731;
+//     background-color: #68eb29;
+//     background-color: #68eb298a;
+//     background-color: #16b43d;
+//     padding-left: 20px;
+//     text-transform: capitalize;
+//     font-size: 11px;
+//     font-weight: 300;
+//     margin: -20px -15px 15px;
+//     padding: 0px 20px 0px;
+
+//     h1 {
+//         // background-color: #16b43d;
+//         // margin: -20px -15px 15px;
+//         // padding: 20px;
+//         color: #fff;
+//         font-weight: 400;        
+//     }
+
+//     section {
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//         justify-content: flex-start;        
+
+//         div {
+//             display: flex;
+//             align-items: center;
+//             text-transform: capitalize;
+//             font-weight: 700;
+//             opacity: .8;        
+    
+//             mat-icon {
+//                 width: 24px;
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;  
+//                 font-weight: 300;
+//                 // margin-bottom: 2px;                      
+//             }
+    
+//             &:last-child {
+//                 // font-weight: 500;
+//             }
+//         }
+//     }
+
+// }
+
+// /* MEDIA QUERIES */
+// @media (max-width: 640px) {
+//     main {
+//         margin: -10px -20px 10px;
+//     }    
+// }

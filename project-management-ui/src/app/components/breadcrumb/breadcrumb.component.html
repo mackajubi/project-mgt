@@ -1,0 +1,19 @@
+<main class="breadcrumb-container">
+    <div *ngFor="let route of activeRoute; index as index">
+        <span [innerHTML]="route" class="fadeInRight _delay{{ index + 3 }}ms"></span>
+        <mat-icon class="fadeInRight _delay{{ index + 3 }}ms" *ngIf="index + 1 < activeRoute.length">chevron_right</mat-icon>
+    </div>
+</main>
+
+ <!-- <main class="breadcrumb-container">
+
+    <h1 [innerHTML]="activeRoute[activeRoute.length - 1]"></h1>
+
+    <section>
+        <div *ngFor="let route of activeRoute; index as index">
+            <span [innerHTML]="route" class="fadeInRight _delay{{ index + 3 }}ms"></span>
+            <mat-icon class="fadeInRight _delay{{ index + 3 }}ms" *ngIf="index + 1 < activeRoute.length">chevron_right</mat-icon>
+        </div>
+    </section>
+    
+</main>  -->

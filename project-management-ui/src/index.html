@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project Management | Uganda National Roads Authority</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon.png">  
+  <link rel="icon" type="image/png" href="./assets/icons/favicon.png">  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/android-icon-192x192.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+
+  <style type="text/css">
+    .loading-wrapper{
+      position: absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      background-color:#fff;
+      overflow: hidden;
+      z-index: 1;
+    }
+  
+    .loading-wrapper > img {
+      /* width: 80px; */
+      /* height: 300px; */
+      /* height: 536px; */
+      height: 80vh;
+    }  
+  </style>   
+  <!-- <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2"> -->
+</head>
+<body>
+  <app-root>
+    <div class="loading-wrapper">
+      <img src="./assets/loaders/loader_2.gif" alt="loading..."/>
+    </div>  
+  </app-root>
+  <app-redirect></app-redirect>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    parent.postMessage(location.href, location.origin);
+  </script>  
+</body>
+</html>

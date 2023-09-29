@@ -1,0 +1,86 @@
+<main class="scrollbar">
+
+    <header class="logo-container">
+
+        <div class="logo-wrapper">
+            <div class="bg-cover"></div>
+    
+            <img src="./assets/images/logo-unra-large.png" class="zoomIn _delay3ms"  alt="">
+        </div>
+
+        <div class="user-infor">
+            <div class="user">
+                <div class="user-image">
+                    <img [src]="user.image ? user.image : './assets/images/no-user.png'" />
+                </div>
+    
+                <div class="user-names">
+                    <h1>
+                        <b>{{ user.FullName }}</b>
+                    </h1>
+    
+                    <p>{{ user.UserRole[0]['Remarks'] }}</p>
+                </div>
+            </div>   
+
+            <div class="info">
+                <p>{{ user.Station }}</p>  
+                
+                <!-- <mat-slide-toggle
+                    [disabled]="processing"
+                    #onLeaveToggleBtn
+                    [ngClass]="{'on-leave': user.OnLeave === 'Y'}"
+                    [color]="user.OnLeave === 'N' ? 'primary' : 'warn'"
+                    [checked]="user.OnLeave === 'N' ? true : false"
+                    (change)="onToggleAvailability($event)"                 
+                    [matTooltip]="user.OnLeave === 'Y' ? 'Re-claim your office' : 'Assign an acting officer'">
+                </mat-slide-toggle> -->
+            </div>          
+        </div>
+    </header>
+
+    <nav>
+
+        <app-sidebar-item 
+            [signOutState]="signOutState"
+            [activePanel]="activePanel"
+            [menuItem]="item"
+            (panelState)="onPanelState($event)"
+            *ngFor="let item of sidebar">
+        </app-sidebar-item>
+
+        <div class="group-items-divider">
+    
+            <hr />
+    
+        </div>  
+
+        <button 
+            [disabled]="signOutState" 
+            mat-button 
+            (click)="onSignOut()">
+            <div class="btn-label">
+                <!-- <mat-icon>exit_to_app</mat-icon> -->
+                <span class="emoji-icon">🔒</span>
+                <span>Sign Out</span>
+            </div>
+        </button>    
+
+        <div class="group-items-divider">
+    
+            <hr />
+    
+        </div>      
+    
+
+        <footer>
+        
+            <p>
+                Copyright &copy; 2023<span *ngIf="currentYear !== 2023"> - {{ currentYear }}</span> UNRA, All rights reserved.  
+                Project Management
+            </p>
+    
+        </footer>    
+    </nav>
+
+</main>

@@ -1,0 +1,17 @@
+<main [ngStyle]="{'background': background, 'color': color}">
+
+    <div [ngStyle]="{'background-color': bubbleColor}" class="bubble"></div>
+
+    <mat-icon>{{ icon }}</mat-icon>
+
+    <div>
+
+        <h1 *ngIf="currency"> {{ data | currency : 'UGX. ' :'symbol':'1.0-0'  }} <span>{{ symbol ? symbol : '' }}</span></h1>
+        
+        <h1 *ngIf="!currency"> {{ data ? (data | number :'1.0-0') : text  }} <span>{{ symbol ? symbol : '' }}</span></h1>
+
+        <p [innerHTML]="title"></p>
+
+    </div>
+
+</main>

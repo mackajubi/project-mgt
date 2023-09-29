@@ -1,0 +1,242 @@
+<main>
+    <div class="mat-progress-bar-container">
+        <mat-progress-bar *ngIf="processing" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <header>
+        <button mat-button matTooltip="Close window" class="close-window-btn" (click)="onCloseDialog()">
+            <mat-icon>clear</mat-icon>
+        </button>  
+                
+        <h1>{{ !data ? 'Add Project' : 'Edit Project Information' }}</h1>
+    </header>
+
+    <mat-horizontal-stepper 
+        [selectedIndex]="selectedIndex"
+        [linear]="isLinear"
+        labelPosition="bottom" 
+        #stepper>
+
+        <mat-step [stepControl]="FormStepOne">
+            <ng-template matStepLabel>
+                <h3>STEP</h3>
+            </ng-template>
+
+            <form [formGroup]="FormStepOne">
+                <mat-form-field appearance="fill" class="full-width" hintLabel="What tasks do you usually perform ?">
+                    <mat-label>Project Name <span class="required-field">required</span></mat-label>
+                    <textarea #ProjectNameInput matInput placeholder="Enter the project name here" maxlength="255" formControlName="ProjectName"></textarea>
+                    <mat-hint align="end">{{ ProjectNameInput.value.length }} / 500</mat-hint>
+                    <!-- <mat-error *ngIf="FormStepOne.get('ProjectName').invalid">{{ getTaskNameErrorMessage() }}</mat-error> -->
+                </mat-form-field> 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Road Length <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="RoadLength">
+                    <!-- <mat-error *ngIf="FormStepOne.get('RoadLength').invalid">{{ getNoOfProjectsErrorMessage() }}</mat-error> -->
+                </mat-form-field>                
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Surface Type <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SurfaceType">
+                    <!-- <mat-error *ngIf="FormStepOne.get('SurfaceType').invalid">{{ getNoOfProjectsErrorMessage() }}</mat-error> -->
+                </mat-form-field>                    
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Project Manager <span class="required-field">required</span></mat-label>
+                    <input type="text" placeholder="Pick one" matInput formControlName="ProjectManager" [matAutocomplete]="autoProjectManager">
+                    <mat-autocomplete #autoProjectManager="matAutocomplete">
+                        <mat-option *ngFor="let employee of filteredProjectManager | async" [value]="employee.FullName + ' - ' + employee.WorkEmail">
+                            {{ employee.FullName }} - <b>{{ employee.WorkEmail }}</b>
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="FormStepOne.get('ProjectManager').invalid">{{ getProjectManagerErrorMessage() }}</mat-error>
+                    <mat-hint>Choose from the dropdown.</mat-hint>
+                    <mat-icon *ngIf="this.FormStepOne.get('ProjectManager').value && !processing && !this.FormStepOne.get('ProjectManager').disabled" (click)="FormStepOne.get('ProjectManager').reset()" class="clear-mat-icon">clear</mat-icon>
+                </mat-form-field>                  
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Project Engineer <span class="required-field">required</span></mat-label>
+                    <input type="text" placeholder="Pick one" matInput formControlName="ProjectEngineer" [matAutocomplete]="autoProjectEngineer">
+                    <mat-autocomplete #autoProjectEngineer="matAutocomplete">
+                        <mat-option *ngFor="let employee of filteredProjectEngineer | async" [value]="employee.FullName + ' - ' + employee.WorkEmail">
+                            {{ employee.FullName }} - <b>{{ employee.WorkEmail }}</b>
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="FormStepOne.get('ProjectEngineer').invalid">{{ getProjectManagerErrorMessage() }}</mat-error>
+                    <mat-hint>Choose from the dropdown.</mat-hint>
+                    <mat-icon *ngIf="this.FormStepOne.get('ProjectEngineer').value && !processing && !this.FormStepOne.get('ProjectEngineer').disabled" (click)="FormStepOne.get('ProjectEngineer').reset()" class="clear-mat-icon">clear</mat-icon>
+                </mat-form-field>                                                
+            </form>
+
+            <div class="button-wrapper single-button-end">                
+
+                <button
+                    mat-raised-button 
+                    [disabled]="processing || FormStepOne.invalid" 
+                    class="next-btn" 
+                    matStepperNext
+                    color="primary">
+                    Next
+                </button>
+            </div>             
+        </mat-step>
+
+        <mat-step [stepControl]="FormStepTwo">
+            <ng-template matStepLabel>
+                <h3>STEP</h3>
+            </ng-template>
+
+            <form [formGroup]="FormStepTwo">
+                <mat-form-field appearance="fill">
+                    <mat-label>Works Signature Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="WorksSignatureDate" [max]="FormStepTwo.get('WorksCompletionDate').value" [matDatepicker]="datepickerWorksSignatureDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerWorksSignatureDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerWorksSignatureDate [disabled]="false"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('WorksSignatureDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field> 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Commencement Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="CommencementDate" [max]="FormStepTwo.get('WorksSignatureDate').value" [matDatepicker]="datepickerCommencementDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerCommencementDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerCommencementDate [disabled]="true"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('CommencementDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field>                                 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Works Completion Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="WorksCompletionDate" [min]="FormStepTwo.get('CommencementDate').value" [matDatepicker]="datepickerWorksCompletionDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerWorksCompletionDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerWorksCompletionDate [disabled]="true"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('WorksCompletionDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field>                                 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Revised Completion Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="RevisedCompletionDate" [min]="FormStepTwo.get('CommencementDate').value" [matDatepicker]="datepickerRevisedCompletionDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerRevisedCompletionDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerRevisedCompletionDate [disabled]="true"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('RevisedCompletionDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field>                                              
+        
+                <mat-form-field appearance="fill">
+                    <mat-label>Supervising Consultant <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SupervisingConsultant">
+                    <!-- <mat-error *ngIf="FormStepTwo.get('SupervisingConsultant').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Supervision Signature Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SupervisionSignatureDate" [max]="FormStepTwo.get('SupervisionCompletionDate').value" [matDatepicker]="datepickerSupervisionSignatureDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerSupervisionSignatureDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerSupervisionSignatureDate [disabled]="true"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('SupervisionSignatureDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field>   
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Supervision Completion Date <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SupervisionCompletionDate" [min]="FormStepTwo.get('SupervisionSignatureDate').value" [matDatepicker]="datepickerSupervisionCompletionDate">
+                    <mat-datepicker-toggle matSuffix [for]="datepickerSupervisionCompletionDate"></mat-datepicker-toggle>
+                    <mat-datepicker #datepickerSupervisionCompletionDate [disabled]="true"></mat-datepicker>
+                    <mat-error *ngIf="FormStepTwo.get('SupervisionCompletionDate').invalid">{{ getDateErrorMessage() }}</mat-error>
+                </mat-form-field>                                 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Supervising Consultant Contract Amount <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SupervisingConsultantContractAmount">
+                    <!-- <mat-error *ngIf="FormStepTwo.get('SupervisingConsultantContractAmount').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                                                  
+            </form>
+
+            <div class="button-wrapper">
+                <button mat-button class="back-btn" matStepperPrevious>Back</button>
+
+                <button 
+                    mat-raised-button 
+                    [disabled]="processing || FormStepTwo.invalid"
+                    class="next-btn" 
+                    color="primary"
+                    matStepperNext>
+                    Next
+                </button>
+            </div>
+        </mat-step>        
+
+        <mat-step [stepControl]="FormStepThree">
+            <ng-template matStepLabel>
+                <h3>STEP</h3>
+            </ng-template>
+
+            <form [formGroup]="FormStepThree">    
+                <mat-form-field appearance="fill">
+                    <mat-label>Revised SCContract Amount <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="RevisedSCContractAmount">
+                    <!-- <mat-error *ngIf="FormStepThree.get('RevisedSCContractAmount').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field> 
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Supervision Procurement Number <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="SupervisionProcurementNumber">
+                    <!-- <mat-error *ngIf="FormStepThree.get('SupervisionProcurementNumber').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Works Contract Amount <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="WorksContractAmount">
+                    <!-- <mat-error *ngIf="FormStepThree.get('WorksContractAmount').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Revised Works Contract Amount <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="RevisedWorksContractAmount">
+                    <!-- <mat-error *ngIf="FormStepThree.get('RevisedWorksContractAmount').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Works Contractor <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="WorksContractor">
+                    <!-- <mat-error *ngIf="FormStepThree.get('WorksContractor').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Works Procurement Number <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="WorksProcurementNumber">
+                    <!-- <mat-error *ngIf="FormStepThree.get('WorksProcurementNumber').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                  
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Insurance Type <span class="required-field">required</span></mat-label>
+                    <mat-select formControlName="ProjectTypeID">
+                        <mat-option [value]="4">Bridges Development</mat-option>
+                        <mat-option [value]="1">Road Development</mat-option>
+                        <mat-option [value]="2">Road Rehabilitation</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="FormStepThree.get('ProjectTypeID').invalid">{{ getSelectErrorMessage() }}</mat-error>
+                </mat-form-field>                    
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Project Funders <span class="required-field">required</span></mat-label>
+                    <input matInput formControlName="ProjectFunderID">
+                    <!-- <mat-error *ngIf="FormStepThree.get('ProjectFunderID').invalid">{{ getPhysicalDemandErrorMessage() }}</mat-error> -->
+                </mat-form-field>                                      
+            </form>
+
+            <div class="button-wrapper">
+                <button mat-button class="back-btn" matStepperPrevious>Back</button>
+
+                <button 
+                    mat-raised-button 
+                    [disabled]="processing || FormStepOne.invalid || FormStepTwo.invalid || FormStepTwo.invalid"
+                    class="donwload-btn" 
+                    color="primary" 
+                    (click)="onSaveChanges()">
+                    <div class="btn-label">
+                        Save Changes
+                    </div>                    
+                </button>             
+            </div>
+        </mat-step>        
+        
+    </mat-horizontal-stepper>
+</main>

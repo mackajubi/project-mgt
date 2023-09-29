@@ -1,0 +1,50 @@
+<main>
+
+    <button 
+        *ngIf="!menuItem.sectionDivider && menuItem.subItems && !menuItem.subItems.length"
+        [disabled]="signOutState" 
+        mat-button 
+        routerLink="/my-account/{{ menuItem.route }}" 
+        (click)="onActivatePanel(menuItem.route)"
+        routerLinkActive="active-route">
+        <div class="btn-label">
+            <mat-icon>{{ menuItem.icon }}</mat-icon>
+            <span>{{ menuItem.name }}</span>
+        </div>
+    </button>       
+
+    <mat-accordion
+        *ngIf="!menuItem.sectionDivider && menuItem.subItems && menuItem.subItems.length"
+        class="accordian-nav" 
+        [multi]="accordion.multi" 
+        [displayMode]="accordion.displayMode">
+
+        <mat-expansion-panel [expanded]="activePanel === menuItem.route ? true : false">
+            <mat-expansion-panel-header [ngClass]="{'active-panel' : activePanel === menuItem.route}">
+            <mat-panel-title>
+                <mat-icon>{{ menuItem.icon }}</mat-icon>
+                <span>{{ menuItem.name }}</span>
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <section class="accordian-nav-buttons">
+                <button 
+                    *ngFor="let subItem of menuItem.subItems"
+                    mat-button 
+                    (click)="onActivatePanel(menuItem.route)" 
+                    routerLink="/my-account{{ menuItem.route }}{{ subItem.route }}" 
+                    routerLinkActive="active-route">{{ subItem.name }}</button>
+            </section>
+        </mat-expansion-panel>
+
+    </mat-accordion>  
+
+    <div *ngIf="menuItem.sectionDivider" class="group-items-label">
+
+        <p *ngIf="menuItem.name" [innerHTML]="menuItem.name"></p>
+
+        <hr />
+
+    </div>    
+
+</main>

@@ -1,0 +1,5 @@
+<div class="sb-wrapper">
+  <mat-spinner *ngIf="!message.complete"></mat-spinner>      
+  <mat-icon class="zoomIn _delay3ms" *ngIf="message.complete">done</mat-icon> 
+  <p>{{ message.msg }}</p>  
+</div>
