@@ -13,12 +13,12 @@ export class CurrencyDirective {
   ) { }
 
   @HostListener('input', ['$event.target.value']) onInput(eventValue: string) {
-    const value = parseInt((eventValue.replace('SHS. ', '')).split(',').join(''));
+    const value = parseInt((eventValue.replace('UGX. ', '')).split(',').join(''));
 
     this.renderer.setProperty(
       this.elementRef.nativeElement,
       'value',
-      this.currency.transform(value, 'SHS. ', 'symbol', '1.0-0'));
+      this.currency.transform(value, 'UGX. ', 'symbol', '1.0-0'));
   }
 
 }

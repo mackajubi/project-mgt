@@ -17,6 +17,7 @@ import { BridgesDevelopmentComponent } from './bridges-development/bridges-devel
 import { RoadDevelopmentComponent } from './road-development/road-development.component';
 import { RoadRehabilitationComponent } from './road-rehabilitation/road-rehabilitation.component';
 import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-dialog.component';
+import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-d
         BridgesDevelopmentComponent,
         RoadDevelopmentComponent,
         RoadRehabilitationComponent,
-        ProjectDialogComponent
+        ProjectDialogComponent,
+        LandAcquisitionDialogComponent        
     ],
     imports: [
         CommonModule,
@@ -39,7 +41,8 @@ import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-d
         DashboardPageRoutingModule,
     ],
     entryComponents: [
-        ProjectDialogComponent
+        ProjectDialogComponent,
+        LandAcquisitionDialogComponent
     ],
     providers: [
         SidebarService,

@@ -1,6 +1,12 @@
-127.0.0.1 - - [29/Sep/2023 11:59:50]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 
+127.0.0.1 - - [02/Oct/2023 16:14:33]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 
 Traceback (most recent call last):
   File "D:\dev\Apps\Project Management\project-management-api\helpers\utils.py", line 81, in _do_select
     cursor.execute(query, values)
-pyodbc.ProgrammingError: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'tb_EmployeeTasks'. (208) (SQLExecDirectW)")
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@ProjectID is not a parameter for procedure getLandAcquisition. (8145) (SQLExecDirectW)')
+~
+127.0.0.1 - - [02/Oct/2023 16:14:55]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\helpers\utils.py", line 81, in _do_select
+    cursor.execute(query, values)
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@ProjectID is not a parameter for procedure getLandAcquisition. (8145) (SQLExecDirectW)')
 ~

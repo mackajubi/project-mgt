@@ -1,374 +1,84 @@
-127.0.0.1 - - [29/Sep/2023 11:04:28]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:04:29]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:05:24]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:05:57]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:05:57]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:15:21]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:15:21]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:15:22]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:15:22]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 422 UNPROCESSABLE ENTITY~
-127.0.0.1 - - [29/Sep/2023 11:15:23]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:15:26]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 422 UNPROCESSABLE ENTITY~
-127.0.0.1 - - [29/Sep/2023 11:15:52]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:15:52]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:15:53]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:15:53]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 422 UNPROCESSABLE ENTITY~
-127.0.0.1 - - [29/Sep/2023 11:18:40]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:18:40]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:24:53]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:24:53]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:30:25]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:30:25]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:31:01]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:31:01]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:31:24]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:31:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:32:15]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:32:15]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:32:40]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:32:40]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:34:17]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:34:17]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:35:15]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:35:15]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:35:18]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:35:49]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:35:49]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:35:50]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:43:45]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:43:45]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:48:37]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:48:37]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:10]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:49:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:11]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:30]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:49:30]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:32]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:33]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:49:59]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:49:59]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:52:27]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:52:27]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:56:55]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:56:56]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:58:30]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:58:30]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 11:59:50]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 11:59:50]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 400 BAD REQUEST~
-127.0.0.1 - - [29/Sep/2023 12:01:46]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:01:46]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:01:47]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:01:47]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:02:49]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:02:49]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:02:50]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:02:50]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:03:18]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:03:21]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:03:22]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:03:22]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:32]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:33]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:33]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:33]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:37]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:40]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:04:40]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:06:03]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:06:03]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:06:04]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:06:04]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:09:54]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:09:54]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:09:55]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:09:55]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:10:43]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:10:43]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:10:44]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:10:44]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:17:47]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:17:47]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:19:51]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:19:51]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:19:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:19:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:22:21]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:22:22]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:22:23]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:22:23]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:24:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:24:59]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:25:00]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:25:00]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:27:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:27:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:27:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:27:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:28:47]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:28:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:28:48]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:28:48]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:29:02]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:29:02]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:29:03]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:29:03]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:38:39]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:38:39]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:38:40]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:38:41]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:39:40]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:39:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:39:42]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:39:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:10]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:11]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:11]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:32]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:32]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:33]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:40:33]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:29]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:30]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:30]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:31]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:31]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:45:33]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:46:56]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:46:57]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:46:57]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:46:58]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:46:58]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:00]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:38]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:38]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:39]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:39]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:40]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:47:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:11]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:11]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:12]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 12:56:14]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:41]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:42]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:45]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:53]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:53]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:54]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:54]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:54]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:00:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:01:56]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:01:56]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:01:57]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:01:57]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:01:57]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:02:00]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:02]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:02]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:02]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:03]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:03]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:04:06]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:09]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:09]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:11]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:11]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:50]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:51]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:51]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:05:55]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:08]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:08]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:09]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:09]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:10]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:10]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:14:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:06]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:07]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:07]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:10]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:10]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 13:39:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:09]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:11]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:11]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:15:13]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:16:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:16:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:16:59]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:16:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:16:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:17:02]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:12]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:12]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:13]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:13]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:16]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:36]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:36]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:37]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:19:37]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:46]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:48]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:48]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:20:50]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:15]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:15]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:16]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:16]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:16]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:21:20]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:26:42]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:26:44]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:26:45]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:26:45]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 14:26:48]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:21]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:21]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:22]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:22]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:39]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:21:39]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:30:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:30:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:30:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:30:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:34:42]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:34:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:35:56]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:35:56]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:37:46]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:37:46]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:37:47]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:37:47]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:38:51]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:38:52]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:38:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:38:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:39:19]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:39:19]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:39:20]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:39:20]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:12]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:12]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:15]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:15]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:54]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:54]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:55]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:53:55]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:54:16]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:54:16]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:54:17]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:54:17]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:55:24]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:55:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:55:25]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:55:25]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:57:35]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:57:36]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:57:36]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:57:37]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:23]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:25]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:25]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:28]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:28]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:58:29]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:59:00]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:59:00]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:59:01]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 15:59:01]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:04]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:04]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:05]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:05]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:18]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:18]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:19]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:03:19]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:04:23]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:04:23]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:04:24]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:04:24]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:05:23]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:05:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:05:25]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:05:25]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:07:41]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:07:42]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:07:43]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:07:43]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:32:24]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:32:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:32:25]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:32:25]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:38]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:39]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:40]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:40]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:46]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:48]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:39:48]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:42:55]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:42:55]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:42:56]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:42:57]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:44:46]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:44:46]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:44:47]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:44:47]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:48:10]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:48:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:48:11]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:48:11]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:55:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:55:12]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:55:13]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 16:55:13]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:04:13]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:04:13]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:04:16]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:04:16]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:05:06]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:05:06]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:05:07]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:05:07]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:05:11]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:18:11]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:18:11]  "POST /ProjectMgt/0.0.1/Project? http" 400 BAD REQUEST~
+127.0.0.1 - - [02/Oct/2023 12:18:45]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:18:45]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:18:46]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:18:46]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:20:19]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:20:19]  "POST /ProjectMgt/0.0.1/Project? http" 400 BAD REQUEST~
+127.0.0.1 - - [02/Oct/2023 12:23:32]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:23:32]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:23:32]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:23:32]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:23:36]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:24:29]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:24:29]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:24:29]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:24:29]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:25:24]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:25:25]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:25:26]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:25:26]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:42]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:42]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:43]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:43]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:55]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:55]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:55]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:26:55]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:27]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:27]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:28]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:28]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:50]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:50]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:50]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:28:50]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:29:42]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:29:43]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:29:44]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:29:44]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:07]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:07]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:07]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:07]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:41]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:42]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:30:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:31:00]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:31:00]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:31:00]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:31:00]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:43:23]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:43:23]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:43:24]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:43:24]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:48]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:48]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:50]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:50]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:57]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=1 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:47:57]  "GET /ProjectMgt/0.0.1/Project?Project=1 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:05]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:05]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:09]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:09]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:25]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
 Exception on /ProjectMgt/0.0.1/Project [POST]
 Traceback (most recent call last):
   File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 100, in validate
     validator.validate(data)
   File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\jsonschema\validators.py", line 353, in validate
     raise error
-jsonschema.exceptions.ValidationError: 0 is not of type 'string'
+jsonschema.exceptions.ValidationError: 6072044000 is not of type 'string'
 
-Failed validating 'type' in schema['properties']['RoadLength']:
+Failed validating 'type' in schema['properties']['SupervisingConsultantContractAmount']:
     {'type': 'string'}
 
-On instance['RoadLength']:
-    0
+On instance['SupervisingConsultantContractAmount']:
+    6072044000
 
 During handling of the above exception, another exception occurred:
 
@@ -396,11 +106,342 @@ Traceback (most recent call last):
   File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 753, in __call__
     raise self.mapping[code](*args, **kwargs)
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-127.0.0.1 - - [29/Sep/2023 17:07:53]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:07:53]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:07:54]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:07:54]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:08:01]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:08:01]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:08:01]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
-127.0.0.1 - - [29/Sep/2023 17:08:01]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:48:35]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+Exception on /ProjectMgt/0.0.1/Project [POST]
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 100, in validate
+    validator.validate(data)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\jsonschema\validators.py", line 353, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 6072044000 is not of type 'string'
+
+Failed validating 'type' in schema['properties']['SupervisingConsultantContractAmount']:
+    {'type': 'string'}
+
+On instance['SupervisingConsultantContractAmount']:
+    6072044000
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 42, in dispatch_request
+    self.validate_payload(meth)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 88, in validate_payload
+    self.__validate_payload(expect, collection=False)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\resource.py", line 73, in __validate_payload
+    expect.validate(data, self.api.refresolver, self.api.format_checker)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\model.py", line 103, in validate
+    errors=dict(self.format_error(e) for e in validator.iter_errors(data)))
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask_restplus\errors.py", line 31, in abort
+    flask.abort(code)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 772, in abort
+    return _aborter(status, *args, **kwargs)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\exceptions.py", line 753, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+127.0.0.1 - - [02/Oct/2023 12:49:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:11]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:12]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:16]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:16]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:35]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:35]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:35]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:49:35]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:50:00]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:50:00]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:50:00]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:50:00]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:01]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:01]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:02]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:03]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:15]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:15]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:28]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:28]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:28]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:51:28]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:28]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:28]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:31]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:31]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:32]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:32]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:51]  "OPTIONS /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:51]  "POST /ProjectMgt/0.0.1/Project? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:51]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:53:51]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:55:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:55:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:55:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:55:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:01]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:01]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:37]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:37]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:39]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:39]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:47]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:48]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 12:56:48]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:03:28]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:03:28]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:03:32]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:03:32]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:04:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:04:59]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:05:02]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:05:02]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:07:45]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:07:46]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:07:51]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:07:51]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:08:10]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:08:10]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:08:11]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:08:11]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:12:41]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:12:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:12:44]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:12:44]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:14:58]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:14:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:14:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:14:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:15:15]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:15:16]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:15:17]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:15:17]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:16:51]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:16:51]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:16:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:16:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:07]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:07]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:08]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:08]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:36]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:36]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:37]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:37]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:55]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:55]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:56]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:17:56]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:18:18]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:18:18]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:18:19]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:18:19]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:20:40]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:20:41]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:20:42]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:20:42]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:21:26]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:21:26]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:21:28]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:21:28]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:24:27]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:24:28]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:24:29]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:24:29]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:20]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:20]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:21]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:21]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:36]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:36]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:37]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:26:37]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:40:12]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=1 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:40:12]  "GET /ProjectMgt/0.0.1/Project?Project=1 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:40:20]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:40:20]  "GET /ProjectMgt/0.0.1/Project?Project=2 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:41:01]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 13:41:01]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:26:47]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:26:47]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:26:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:26:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:31:02]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:31:02]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:31:03]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:31:03]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:42:28]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:42:29]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:42:32]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:42:32]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:47:17]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:47:18]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:47:21]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:47:21]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:48:17]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:48:17]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:48:18]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:48:18]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:50:04]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:50:04]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:50:05]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:50:05]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:51:28]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:51:28]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:51:29]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:51:29]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:53:03]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:53:03]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:53:08]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:53:08]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:54:57]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:54:58]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:54:59]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:54:59]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:55:32]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:55:32]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:55:36]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 15:55:36]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:29]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:29]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:30]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:30]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:33]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:33]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:55]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:14:55]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:15:26]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:15:26]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:04]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:04]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:05]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:05]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:20]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:21]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:22]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:18:22]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:20:57]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:20:57]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:20:58]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:20:58]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:21:03]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:21:03]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:21:47]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:21:47]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:26]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:26]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:27]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:27]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:36]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:22:36]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:32]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:32]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:33]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:33]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:49]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:49]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:23:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:24:37]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:24:37]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:09]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:09]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:10]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:10]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:12]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:12]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:51]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:51]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:52]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:25:52]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:26:48]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:26:49]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:26:50]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:26:50]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:25]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:25]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:26]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:26]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:29]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:27:29]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:31:07]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:31:07]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:31:08]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:31:08]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:03]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:03]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:04]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:04]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:43]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:52]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:53]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 16:32:53]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:04:41]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:04:41]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:13:26]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:13:26]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:13:27]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:13:27]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:16:13]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:16:13]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:16:14]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:16:14]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:15]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:15]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:16]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:16]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:45]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:18:45]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:07]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:09]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:09]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:10]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:50]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:20:51]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:39]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:39]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:40]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:40]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:48]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:48]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:22:59]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition? http" 200 OK~
+Exception on /ProjectMgt/0.0.1/LandAcquisition [PUT]
+Traceback (most recent call last):
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\flask\ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "D:\dev\Apps\Project Management\project-management-api\venv\lib\site-packages\werkzeug\routing.py", line 1798, in match
+    raise MethodNotAllowed(valid_methods=list(have_match_for))
+werkzeug.exceptions.MethodNotAllowed: 405 Method Not Allowed: The method is not allowed for the requested URL.
+127.0.0.1 - - [02/Oct/2023 17:29:24]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:24]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:25]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:25]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:45]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:45]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:55]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:55]  "PUT /ProjectMgt/0.0.1/LandAcquisition? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:55]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:29:55]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:31:11]  "OPTIONS /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:31:11]  "POST /ProjectMgt/0.0.1/Auth/SSO? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:31:12]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:31:12]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:11]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:11]  "GET /ProjectMgt/0.0.1/LandAcquisition?Project=19 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:19]  "OPTIONS /ProjectMgt/0.0.1/LandAcquisition? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:19]  "PUT /ProjectMgt/0.0.1/LandAcquisition? http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:19]  "OPTIONS /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~
+127.0.0.1 - - [02/Oct/2023 17:32:19]  "GET /ProjectMgt/0.0.1/Project?Project=4 http" 200 OK~

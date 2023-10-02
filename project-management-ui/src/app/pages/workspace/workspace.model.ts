@@ -25,6 +25,18 @@ export interface Project {
     ProjectType: string;
     ProjectFunderID: string;
     ProjectStatus: string;
+    HasLandAcquisitionData: number;
+}
+export interface LandAcquisition {
+    LandID: number;
+    LandValued: string;
+    LandAcquired: string;
+    PAPsValued: string;
+    PAPsPaid: string;
+    AmountApproved: string;
+    AmountPaid: string;
+    KMsAcquired: string;
+    ProjectID?: number;
 }
 
 export interface Workflow {

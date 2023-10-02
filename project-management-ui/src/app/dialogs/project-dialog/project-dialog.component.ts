@@ -21,7 +21,7 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
 
   processing = false;
   isLinear = false;
-  selectedIndex = 2;
+  selectedIndex = 0;
   status = false;
   employees: Employee[];
   selectedProjectManager: Employee;
@@ -85,52 +85,73 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngAfterViewInit(): void {
-    this.httpSub = this.fetchMultiple()
-    .pipe(catchError(this.service.handleError))
-    .subscribe((responseList: ApiPayload[]) => {
-      
-      this.employees = responseList[0]['allstaff'];
-
+    if(this.service.employees.length) { 
+      this.employees = this.service.employees;
+  
+      this.disableForms();
       this.enableForms();
 
       this.Listeners();
 
       if (this.data) {
         this.updateForm();
-      }      
-
-      this.processing = false;
-
-    }, (error) => {
-      this.processing = false;
-      this.service.determineErrorResponse(error);
-    });
+      }     
+    } else {
+      this.httpSub = this.fetchMultiple()
+      .pipe(catchError(this.service.handleError))
+      .subscribe((responseList: ApiPayload[]) => {
+        
+        this.service.employees = responseList[0]['allstaff'];
+        this.employees = this.service.employees;
+  
+        this.enableForms();
+  
+        this.Listeners();
+  
+        if (this.data) {
+          this.updateForm();
+        }      
+  
+        this.processing = false;
+  
+      }, (error) => {
+        this.processing = false;
+        this.service.determineErrorResponse(error);
+      });
+    }
   }   
   
   private Listeners():void {
-      // Employees
-      this.filteredProjectManager = this.FormStepOne.get('ProjectManager').valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this.filterEmployees(value))
-      );   
-      
-      // Register Form Field Listeners
-      this.FormStepOne.get('ProjectManager').valueChanges.subscribe((value) => {
-        this.employees.filter((employee: Employee) => {
-          if (value && (value === employee.FullName)) {
-            this.selectedProjectManager = employee;
-          }
-        });
-      });  
+    // Register Form Field Listeners
+    this.filteredProjectManager = this.FormStepOne.get('ProjectManager').valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this.filterEmployees(value))
+    );   
 
-      this.FormStepOne.get('ProjectEngineer').valueChanges.subscribe((value) => {
-        this.employees.filter((employee: Employee) => {
-          if (value && (value === employee.FullName)) {
-            this.selectedProjectEngineer = employee;
-          }
-        });
-      });      
+    this.filteredProjectEngineer = this.FormStepOne.get('ProjectEngineer').valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this.filterEmployees(value))
+    );   
+    
+    this.FormStepOne.get('ProjectManager').valueChanges.subscribe((value) => {
+      this.employees.filter((employee: Employee) => {
+        if (value && (value.trim().toUpperCase() == (employee.FirstName + ' ' + employee.LastName))) {
+          this.selectedProjectManager = employee;
+          console.log('selected Project Manager:', this.selectedProjectManager);
+        }
+      });
+    });  
+
+    this.FormStepOne.get('ProjectEngineer').valueChanges.subscribe((value) => {
+      this.employees.filter((employee: Employee) => {
+        if (value && (value.trim().toUpperCase() == (employee.FirstName + ' ' + employee.LastName))) {
+          this.selectedProjectEngineer = employee;
+          console.log('selected Project Engineer:', this.selectedProjectEngineer);
+        }
+      });
+    });      
   }
 
   onCloseDialog(): void {
@@ -155,7 +176,8 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   getSelectErrorMessage() {
-    return this.FormStepOne.get('ProjectTypeID').hasError('required')
+    return this.FormStepThree.get('ProjectTypeID').hasError('required')
+    || this.FormStepOne.get('SurfaceType').hasError('required')
     ? 'Please select from the dropdown' : '';
   }  
 
@@ -191,7 +213,6 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
 
   private updateForm(): void {
     // this.disableForms();
-    this.processing = true;
 
     this.FormStepOne.patchValue({
       ProjectName: this.data.row.ProjectName,
@@ -225,20 +246,34 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
 
     setTimeout(() => {
       this.enableForms();
-      this.processing = false;
       this.changeDetector.detectChanges();
     });
   }
 
+  onClearProjectManager(): void {
+    this.FormStepOne.get('ProjectManager').reset();
+    this.selectedProjectManager = null;
+    this.data.row.ProjectManager = null;
+  }
+
+  onClearProjectEngineer(): void {
+    this.FormStepOne.get('ProjectEngineer').reset();
+    this.selectedProjectEngineer = null;
+    this.data.row.ProjectEngineer = null;
+  }
+
   private getFormData(): any {    
+    console.log('project manager:', this.selectedProjectManager);
+    console.log('project engineer:', this.selectedProjectEngineer);
+
     const data = {
       ProjectID: this.data.row.ProjectID,
       ProjectNumber: this.data.row.ProjectNumber,
       ProjectName: this.FormStepOne.get('ProjectName').value,
-      RoadLength: this.FormStepOne.get('RoadLength').value ? this.FormStepOne.get('RoadLength').value : 0,
+      RoadLength: this.FormStepOne.get('RoadLength').value ? (this.FormStepOne.get('RoadLength').value).toString() : '',
       SurfaceType: this.FormStepOne.get('SurfaceType').value ? this.FormStepOne.get('SurfaceType').value : 'NA',
-      ProjectManager: this.selectedProjectManager ? this.selectedProjectManager.FullName : '',
-      ProjectEngineer: this.selectedProjectEngineer ? this.selectedProjectEngineer.FullName : '',
+      ProjectManager: this.selectedProjectManager ? this.selectedProjectManager.FullName : (this.data.row.ProjectManager ? this.data.row.ProjectManager : ''),
+      ProjectEngineer: this.selectedProjectEngineer ? this.selectedProjectEngineer.FullName : (this.data.row.ProjectEngineer ? this.data.row.ProjectEngineer : ''),
       WorksSignatureDate: this.FormStepTwo.get('WorksSignatureDate').value ? this.datePipe.transform(this.FormStepTwo.get('WorksSignatureDate').value, 'yyyy-MM-dd') : '',
       CommencementDate: this.FormStepTwo.get('CommencementDate').value ? this.datePipe.transform(this.FormStepTwo.get('CommencementDate').value, 'yyyy-MM-dd') : '',
       WorksCompletionDate: this.FormStepTwo.get('WorksCompletionDate').value ? this.datePipe.transform(this.FormStepTwo.get('WorksCompletionDate').value, 'yyyy-MM-dd') : '',
@@ -246,11 +281,11 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
       SupervisingConsultant: this.FormStepTwo.get('SupervisingConsultant').value ? this.FormStepTwo.get('SupervisingConsultant').value : '',
       SupervisionSignatureDate: this.FormStepTwo.get('SupervisionSignatureDate').value ? this.datePipe.transform(this.FormStepTwo.get('SupervisionSignatureDate').value, 'yyyy-MM-dd') : '',
       SupervisionCompletionDate: this.FormStepTwo.get('SupervisionCompletionDate').value ? this.datePipe.transform(this.FormStepTwo.get('SupervisionCompletionDate').value, 'yyyy-MM-dd') : '',
-      SupervisingConsultantContractAmount: this.FormStepTwo.get('SupervisingConsultantContractAmount').value ? this.FormStepTwo.get('SupervisingConsultantContractAmount').value : '',
-      RevisedSCContractAmount: this.FormStepThree.get('RevisedSCContractAmount').value ? this.FormStepThree.get('RevisedSCContractAmount').value : '',
+      SupervisingConsultantContractAmount: this.FormStepTwo.get('SupervisingConsultantContractAmount').value ? (this.FormStepTwo.get('SupervisingConsultantContractAmount').value).toString() : '',
+      RevisedSCContractAmount: this.FormStepThree.get('RevisedSCContractAmount').value ? (this.FormStepThree.get('RevisedSCContractAmount').value).toString() : '',
       SupervisionProcurementNumber: this.FormStepThree.get('SupervisionProcurementNumber').value ? this.FormStepThree.get('SupervisionProcurementNumber').value : '',
-      WorksContractAmount: this.FormStepThree.get('WorksContractAmount').value ? this.FormStepThree.get('WorksContractAmount').value : '',
-      RevisedWorksContractAmount: this.FormStepThree.get('RevisedWorksContractAmount').value ? this.FormStepThree.get('RevisedWorksContractAmount').value : '',
+      WorksContractAmount: this.FormStepThree.get('WorksContractAmount').value ? (this.FormStepThree.get('WorksContractAmount').value).toString(): '',
+      RevisedWorksContractAmount: this.FormStepThree.get('RevisedWorksContractAmount').value ? (this.FormStepThree.get('RevisedWorksContractAmount').value).toString() :'',
       WorksContractor: this.FormStepThree.get('WorksContractor').value ? this.FormStepThree.get('WorksContractor').value : '',
       WorksProcurementNumber: this.FormStepThree.get('WorksProcurementNumber').value ? this.FormStepThree.get('WorksProcurementNumber').value : '',
       ProjectTypeID: this.FormStepThree.get('ProjectTypeID').value,
@@ -267,8 +302,19 @@ export class ProjectDialogComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   private enableForms(): void {
-    // this.FormStepOne.enable();
-    // this.FormStepTwo.enable();
+    // FORM ONE
+    this.FormStepOne.get('RoadLength').enable();
+    this.FormStepOne.get('SurfaceType').enable();
+    this.FormStepOne.get('ProjectManager').enable();
+    this.FormStepOne.get('ProjectEngineer').enable();
+
+    // FORM TWO
+    // this.FormStepTwo.get('RevisedCompletionDate').enable();
+    
+    // FORM THREE
+    this.FormStepThree.get('RevisedSCContractAmount').enable();
+    this.FormStepThree.get('SupervisionProcurementNumber').enable();
+    this.FormStepThree.get('WorksProcurementNumber').enable();
   }
 
   onSaveChanges(): void {

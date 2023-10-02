@@ -1,0 +1,97 @@
+<main>
+    <div class="mat-progress-bar-container">
+        <mat-progress-bar *ngIf="processing" mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <header>
+        <h1>{{ data.action === 'Add' ? 'Add' : 'Edit' }} Land Acquisition Information</h1>
+
+        <p *ngIf="data.row">
+            <span>Name of the Project</span>
+            {{ data.row.ProjectName }}
+        </p>
+
+        <button mat-button (click)="onCloseDialog()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </header>
+
+    <form [formGroup]="form">        
+        <mat-form-field appearance="fill">
+            <mat-label>Land Valued <span class="required-field">required</span></mat-label>
+            <input matInput appDigitCommaSeparator formControlName="LandValued" maxlength="56">
+            <mat-error *ngIf="form.get('LandValued').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>        
+
+        <mat-form-field appearance="fill">
+            <mat-label>Land Acquired <span class="optional-field">optional</span></mat-label>
+            <input matInput appDigitCommaSeparator formControlName="LandAcquired" maxlength="56">
+            <mat-error *ngIf="form.get('LandAcquired').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>PAPs Valued <span class="required-field">required</span></mat-label>
+            <input matInput appDigitCommaSeparator formControlName="PAPsValued" maxlength="15">
+            <mat-error *ngIf="form.get('PAPsValued').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>        
+
+        <mat-form-field appearance="fill">
+            <mat-label>PAPS Paid <span class="optional-field">optional</span></mat-label>
+            <input matInput appDigitCommaSeparator formControlName="PAPsPaid" maxlength="15">
+            <mat-error *ngIf="form.get('PAPsPaid').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>            
+
+        <mat-form-field appearance="fill">
+            <mat-label>Approved Amount for PAPs<span class="required-field">required</span></mat-label>
+            <input matInput appCurrencyDirective formControlName="AmountApproved" maxlength="40">
+            <mat-error *ngIf="form.get('AmountApproved').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>        
+
+        <mat-form-field appearance="fill">
+            <mat-label>Amount Paid to PAPS<span class="optional-field">optional</span></mat-label>
+            <input matInput appCurrencyDirective formControlName="AmountPaid" maxlength="40">
+            <mat-error *ngIf="form.get('AmountPaid').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>            
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>KMs Acquired<span class="optional-field">optional</span></mat-label>
+            <input matInput appDigitCommaSeparator formControlName="KMsAcquired" maxlength="56">
+            <mat-error *ngIf="form.get('KMsAcquired').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>            
+
+        <div class="button-wrapper">
+            <button 
+                color="warn" 
+                mat-button 
+                (click)="form.reset()" 
+                [disabled]="processing">
+                Clear Form
+            </button>
+    
+            <button 
+                *ngIf="data.action === 'Add'"
+                mat-raised-button 
+                [disabled]="processing || form.invalid"
+                color="primary" 
+                class="next-btn" 
+                (click)="onSave()">
+                <div class="btn-label">
+                    Submit
+                </div>                    
+            </button>        
+    
+            <button 
+                *ngIf="data.action === 'Edit'"
+                mat-raised-button 
+                [disabled]="processing || form.invalid"
+                color="primary" 
+                class="next-btn" 
+                (click)="onSaveChanges()">
+                <div class="btn-label">
+                    Save Changes
+                </div>                    
+            </button>        
+        </div>
+    </form>
+
+</main>

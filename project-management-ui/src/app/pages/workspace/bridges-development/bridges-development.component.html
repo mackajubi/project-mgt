@@ -156,8 +156,26 @@
                             mat-menu-item 
                             *ngIf="makeChanges"
                             (click)="$event.stopPropagation();onMakeChanges(row)">
-                            <mat-icon>edit</mat-icon>
+                            <mat-icon color="primary">edit</mat-icon>
                             <span>Make Changes</span>
+                        </button>
+
+                        <hr />                        
+
+                        <button 
+                            mat-menu-item 
+                            *ngIf="row.HasLandAcquisitionData === 0"
+                            (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Add')">
+                            <mat-icon color="primary">note_add</mat-icon>
+                            <span>Add Land Acquisition Details</span>
+                        </button>
+
+                        <button 
+                            mat-menu-item 
+                            *ngIf="row.HasLandAcquisitionData > 0"
+                            (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Edit')">
+                            <mat-icon color="primary">edit_note</mat-icon>
+                            <span>Edit Land Acquisition Details</span>
                         </button>
 
                         <!-- <hr />                        

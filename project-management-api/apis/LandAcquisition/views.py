@@ -4,17 +4,17 @@ from flask_jwt_extended import (
     get_jwt_identity    
 )
 from helpers import utils
-from apis.Project.parsers import project_parser
-from apis.Project.models import project_model
+from apis.LandAcquisition.parsers import land_acquisition_parser, put_land_acquisition_parser
+from apis.LandAcquisition.models import land_acquisition_model
 
-api = Namespace('Projects', description='Project endpoints.')
+api = Namespace('Land Acquisition', description='LandAcquisition endpoints.')
 
 #########################################################################################
 #                                                                                       #
 #                                     Models                                            #
 #                                                                                       #
 #########################################################################################
-update_project  = api.model('Create A Project', project_model)
+create_land_acquisition  = api.model('Create A Land Acquisition Record', land_acquisition_model)
 
 
 #########################################################################################
@@ -23,50 +23,32 @@ update_project  = api.model('Create A Project', project_model)
 #                                                                                       #
 #########################################################################################
 @api.route('')
-class Project(Resource):
+class LandAcquisition(Resource):
     @jwt_required
     @api.response(200, 'OK')
     @api.response(400, 'Validation error')
-    @api.expect(project_parser)
+    @api.expect(land_acquisition_parser)
     def get(self):
 
-        payload = project_parser.parse_args()
+        payload = land_acquisition_parser.parse_args()
 
         data = []
 
-        sp_stmt = "exec getProjects @ProjectTypeID=?"
+        sp_stmt = "exec getLandAcquisition @ProjectID=?"
 
         results = utils._do_select(sp_stmt, (payload['Project']))
         
         if results["status"] and len(results['data']):  
 
             data = utils._object(results['data'], [
-                "ProjectID",
-                "ProjectNumber",
-                "ProjectName",
-                "RoadLength",
-                "SurfaceType",
-                "ProjectManager",
-                "ProjectEngineer",
-                "WorksSignatureDate",
-                "CommencementDate",
-                "WorksCompletionDate",
-                "RevisedCompletionDate",
-                "SupervisionSignatureDate",
-                "SupervisionCompletionDate",
-                "SupervisingConsultantContractAmount",
-                "RevisedSCContractAmount",
-                "SupervisingConsultant",
-                "SupervisionProcurementNumber",
-                "WorksContractAmount",
-                "RevisedWorksContractAmount",
-                "WorksContractor",
-                "WorksProcurementNumber",
-                "ProjectTypeID",
-                "ProjectType",
-                "ProjectFunderID",
-                "ProjectStatus",
-                "HasLandAcquisitionData"
+                "LandID",
+                "LandValued",
+                "LandAcquired",
+                "PAPsValued",
+                "PAPsPaid",
+                "AmountApproved",
+                "AmountPaid",
+                "KMsAcquired"
             ], True)
 
         return {
@@ -78,13 +60,104 @@ class Project(Resource):
     @jwt_required
     @api.response(200, 'OK')
     @api.response(400, 'Validation error')
-    @api.expect(update_project)
+    @api.expect(create_land_acquisition)
     def post(self):
         payload = api.payload
 
         print('payload:', payload)      
 
         current_user = get_jwt_identity()    
+
+        return {
+            'message': 'Operation Successful. Project information updated.', 
+            'code': 200, 
+            'data': ""
+        }, 200        
+
+        sp_stmt = """exec updateProjects 
+                @ProjectID = ?,
+                @ProjectNumber = ?,
+                @ProjectName = ?,
+                @RoadLength = ?,
+                @SurfaceType = ?,
+                @ProjectManager = ?,
+                @ProjectEngineer = ?,
+                @WorksSignatureDate = ?,
+                @CommencementDate = ?,
+                @WorksCompletionDate = ?,
+                @RevisedCompletionDate = ?,
+                @SupervisingConsultant = ?,
+                @SupervisionSignatureDate = ?,
+                @SupervisionCompletionDate = ?,
+                @SupervisingConsultantContractAmount = ?,
+                @RevisedSCContractAmount = ?,
+                @SupervisionProcurementNumber = ?,
+                @WorksContractAmount = ?,
+                @RevisedWorksContractAmount = ?,
+                @WorksContractor = ?,
+                @WorksProcurementNumber = ?,
+                @ProjectTypeID = ?,
+                @ProjectFunderID = ?,	
+                @UpdatedBy = ?
+        """
+        results = utils._do_update_or_insert(sp_stmt, (
+			payload['ProjectID'],
+			payload['ProjectNumber'],
+			payload['ProjectName'],
+			payload['RoadLength'],
+			payload['SurfaceType'],
+			payload['ProjectManager'],
+			payload['ProjectEngineer'],
+			payload['WorksSignatureDate'],
+			payload['CommencementDate'],
+			payload['WorksCompletionDate'],
+			payload['RevisedCompletionDate'],
+			payload['SupervisingConsultant'],
+			payload['SupervisionSignatureDate'],
+			payload['SupervisionCompletionDate'],
+			payload['SupervisingConsultantContractAmount'],
+			payload['RevisedSCContractAmount'],
+			payload['SupervisionProcurementNumber'],
+			payload['WorksContractAmount'],
+			payload['RevisedWorksContractAmount'],
+			payload['WorksContractor'],
+			payload['WorksProcurementNumber'],
+			payload['ProjectTypeID'],
+			payload['ProjectFunderID'],	
+            current_user['UserName']
+        ))
+
+        print('results:---', results)
+
+        if results["status"] and results['rowcount'] == 1:
+            return {
+                'message': 'Operation Successful. Project information updated.', 
+                'code': 200, 
+                'data': ""
+            }, 200
+
+        return {
+            'message': 'Operation Failed.', 
+            'code': 400,
+            'data':""
+        }, 400
+
+    @jwt_required
+    @api.response(200, 'OK')
+    @api.response(400, 'Validation error')
+    @api.expect(put_land_acquisition_parser)
+    def put(self):
+        payload = api.payload
+
+        print('payload:', payload)      
+
+        current_user = get_jwt_identity()    
+
+        return {
+            'message': 'Operation Successful. Project information updated.', 
+            'code': 200, 
+            'data': ""
+        }, 200        
 
         sp_stmt = """exec updateProjects 
                 @ProjectID = ?,

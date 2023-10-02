@@ -31,6 +31,7 @@ export class ApiService {
   processingState = new Subject<{msg: string; complete: boolean}>();
   am4chartColors = ['#67b7dc', '#8067dc', '#dc67ce'];
   search = new Subject();
+  employees: Employee[] = [];
 
   private tokenErrors = ['The access token has expired', 'The token is Missing'];
   private serverError = 'Sorry, please contact ICT for assistance or try again later';

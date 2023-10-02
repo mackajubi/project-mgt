@@ -26,6 +26,11 @@ export class ApiEndpointsService {
   // REFERENCE DATA
   // getDepartments = environment.unraGen + 'departments/all';  
   getDepartments = environment.pythonApi + 'Department';
+  
+  // PROJECTS
   projects = environment.pythonApi + 'Project';  
+  
+  // LAND ACQUISITION
+  landAcquisition = environment.pythonApi + 'LandAcquisition';  
   
 }

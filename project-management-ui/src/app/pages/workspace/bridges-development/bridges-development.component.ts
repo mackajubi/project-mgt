@@ -20,6 +20,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Project } from '../workspace.model';
 import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-dialog.component';
+import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
 
 @Component({
   selector: 'app-bridges-development',
@@ -84,7 +85,7 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
   ) {
     this.user = this.service.getUser;
 
-    console.log('user:', this.user);
+    // console.log('user:', this.user);
   }
 
   ngOnInit(): void {
@@ -130,7 +131,7 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 
-        this.onMakeChanges(this.dataSource.data[0]);
+        // this.onMakeChanges(this.dataSource.data[0]);
       });
 
       this.processing = false;
@@ -143,19 +144,35 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
   }
 
   onMakeChanges(row: Project): void {
-    console.log('view project details:', row);
+    // console.log('view project details:', row);
     this.dialogRef = this.dialog.open(ProjectDialogComponent, {
       panelClass: ['project-dialog', 'dialogs'],
       disableClose: true,
       data: { row }
     });
 
-    this.dialogRef.afterClosed().subscribe((result: { status: boolean, vehicle: any }) => {
+    this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {
       if (result.status) {
         this.onFetch();
       }
     }); 
   }
+
+  onManageLandAcquisitionData(row: Project, action: string): void {
+    console.log('view project details:', row);
+    console.log('action:', action);
+    this.dialogRef = this.dialog.open(LandAcquisitionDialogComponent, {
+      panelClass: ['land-acquisition-dialog', 'dialogs'],
+      disableClose: true,
+      data: { row, action },
+    });
+
+    this.dialogRef.afterClosed().subscribe((result: { status: boolean, row: any }) => {
+      if (result.status) {
+        this.onFetch();
+      }
+    });     
+  }  
 
   onViewDetails(row: Project): void {
     console.log('view vehicle details:', row);
