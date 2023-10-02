@@ -1,3 +1,4 @@
+import { CurrencyPipe, DecimalPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -29,6 +30,8 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
     private service: ApiService,
     private endpoints: ApiEndpointsService,
     private http: HttpClient,
+    private currency: CurrencyPipe,
+    private number: DecimalPipe
   ) {
     console.log('project:', data.row);
     console.log('action:', data.action);
@@ -100,13 +103,13 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
 
   private updateForm(data: LandAcquisition): void {   
     this.form.patchValue({
-      LandValued: data.LandValued,
-      LandAcquired: data.LandAcquired,
-      PAPsValued: data.PAPsValued,
-      PAPsPaid: data.PAPsPaid,
-      AmountApproved: data.AmountApproved,
-      AmountPaid: data.AmountPaid,
-      KMsAcquired: data.KMsAcquired,
+      LandValued: this.number.transform(data.LandValued, '1.0-0'),
+      LandAcquired: this.number.transform(data.LandAcquired, '1.0-0'),
+      PAPsValued: this.number.transform(data.PAPsValued, '1.0-0'),
+      PAPsPaid: this.number.transform(data.PAPsPaid, '1.0-0'),
+      AmountApproved: this.currency.transform(data.AmountApproved, 'UGX. ', 'symbol', '1.0-0'),
+      AmountPaid: this.currency.transform(data.AmountPaid, 'UGX. ', 'symbol', '1.0-0'),
+      KMsAcquired: this.number.transform(data.KMsAcquired, '1.0-0'),
     }); 
   }
 
