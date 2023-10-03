@@ -18,7 +18,7 @@ export class CurrencyDirective {
     this.renderer.setProperty(
       this.elementRef.nativeElement,
       'value',
-      this.currency.transform(value, 'UGX. ', 'symbol', '1.0-0'));
+      this.currency.transform(value, 'UGX. ', 'symbol', '1.2-2'));
   }
 
 }

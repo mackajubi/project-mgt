@@ -19,13 +19,13 @@
     <form [formGroup]="form">        
         <mat-form-field appearance="fill">
             <mat-label>Land Valued <span class="required-field">required</span></mat-label>
-            <input matInput appDigitCommaSeparator formControlName="LandValued" maxlength="56">
+            <input matInput appDigitCommaSeparatorWithDecimals formControlName="LandValued" maxlength="56">
             <mat-error *ngIf="form.get('LandValued').invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>        
 
         <mat-form-field appearance="fill">
             <mat-label>Land Acquired <span class="optional-field">optional</span></mat-label>
-            <input matInput appDigitCommaSeparator formControlName="LandAcquired" maxlength="56">
+            <input matInput appDigitCommaSeparatorWithDecimals formControlName="LandAcquired" maxlength="56">
             <mat-error *ngIf="form.get('LandAcquired').invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
 
@@ -43,19 +43,21 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Approved Amount for PAPs<span class="required-field">required</span></mat-label>
-            <input matInput appCurrencyDirective formControlName="AmountApproved" maxlength="40">
+            <mat-hint matPrefix><b>UGX.</b> &nbsp;&nbsp;</mat-hint>
+            <input matInput appDigitCommaSeparatorWithDecimals formControlName="AmountApproved" maxlength="56">
             <mat-error *ngIf="form.get('AmountApproved').invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>        
 
         <mat-form-field appearance="fill">
             <mat-label>Amount Paid to PAPS<span class="optional-field">optional</span></mat-label>
-            <input matInput appCurrencyDirective formControlName="AmountPaid" maxlength="40">
+            <mat-hint matPrefix><b>UGX.</b> &nbsp;&nbsp;</mat-hint>
+            <input matInput appDigitCommaSeparatorWithDecimals formControlName="AmountPaid" maxlength="56">
             <mat-error *ngIf="form.get('AmountPaid').invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>            
 
         <mat-form-field appearance="fill" class="full-width">
             <mat-label>KMs Acquired<span class="optional-field">optional</span></mat-label>
-            <input matInput appDigitCommaSeparator formControlName="KMsAcquired" maxlength="56">
+            <input matInput appDigitCommaSeparatorWithDecimals formControlName="KMsAcquired" maxlength="56">
             <mat-error *ngIf="form.get('KMsAcquired').invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>            
 

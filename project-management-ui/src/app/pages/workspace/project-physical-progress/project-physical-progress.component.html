@@ -34,12 +34,12 @@
                     <span>Reload</span>
                 </button>
 
-                <!-- <button 
+                <button 
                     mat-menu-item 
-                    (click)="onAddVehicle()">
+                    (click)="onAddProgress()">
                     <mat-icon color="primary">add</mat-icon>
-                    <span>Add A Vehicle</span>
-                </button> -->
+                    <span>Add Progress</span>
+                </button>
             </mat-menu>              
         </section>
 
@@ -53,14 +53,14 @@
                 <mat-icon>sync</mat-icon>
             </button>
                         
-            <!-- <button 
+            <button 
                 class="add-an-item fadeInUp _delay1ms"
                 color="primary"
                 mat-raised-button
-                (click)="onAddVehicle()"
+                (click)="onAddProgress()"
                 [disabled]="processing">
-                Add A Vehicle
-            </button>                    -->
+                Add Progress
+            </button>                   
         </section>
         
     </header>
@@ -78,55 +78,45 @@
                 <td mat-cell *matCellDef="let index = index"> {{ index + 1 }} </td>
             </ng-container>   
 
-            <ng-container matColumnDef="ProjectNumber">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Number </th>
-                <td mat-cell *matCellDef="let row"><b>{{ row.ProjectNumber }}</b></td>
+            <ng-container matColumnDef="Duration">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+                <td mat-cell *matCellDef="let row"><b>{{ row.Duration | date : 'EEE, MMM dd y' }}</b></td>
             </ng-container>          
 
-            <ng-container matColumnDef="ProjectName">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Project </th>
-                <td mat-cell *matCellDef="let row"> {{ row.ProjectName }} </td>
+            <ng-container matColumnDef="PlannedProgress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Planned Progress </th>
+                <td mat-cell *matCellDef="let row"> {{ row.PlannedProgress | number : '1.0-2' }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="RoadLength">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Road Length </th>
-                <td mat-cell *matCellDef="let row"> {{ row.RoadLength | number : '1.0-2' }} </td>
+            <ng-container matColumnDef="ActualProgress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actual Progress </th>
+                <td mat-cell *matCellDef="let row"> {{ row.ActualProgress | number : '1.0-2' }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="SurfaceType">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Surface Type </th>
-                <td mat-cell *matCellDef="let row"> {{ row.SurfaceType }} </td>
+            <ng-container matColumnDef="CummulativePlannedProgress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cummulative Planned Progress </th>
+                <td mat-cell *matCellDef="let row"> {{ row.CummulativePlannedProgress | number : '1.0-2' }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="ProjectManager">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Project Manager </th>
-                <td mat-cell *matCellDef="let row"> <b>{{ row.ProjectManager }}</b> </td>
+            <ng-container matColumnDef="CummulativeActualProgress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cummulative Actual Progress </th>
+                <td mat-cell *matCellDef="let row"> {{ row.CummulativeActualProgress | number : '1.0-2' }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="ProjectEngineer">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Project Engineer </th>
-                <td mat-cell *matCellDef="let row"> {{ row.ProjectEngineer }} </td>
+            <ng-container matColumnDef="PhysicalStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row"> {{ row.PhysicalStatus }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="SupervisingConsultant">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Supervising Consultant </th>
-                <td mat-cell *matCellDef="let row"> {{ row.SupervisingConsultant }} </td>
+            <ng-container matColumnDef="ModifiedBy">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Modified By </th>
+                <td mat-cell *matCellDef="let row"> {{ row.ModifiedBy }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="WorksContractAmount">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Amount </th>
-                <td mat-cell *matCellDef="let row"> <b>{{ row.WorksContractAmount | number : '1.0-2' }}</b> </td>
-            </ng-container>            
-
-            <ng-container matColumnDef="WorksContractor">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Contractor </th>
-                <td mat-cell *matCellDef="let row"> {{ row.WorksContractor }} </td>
-            </ng-container>            
-
-            <ng-container matColumnDef="ProjectFunderID">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Funder(s) </th>
-                <td mat-cell *matCellDef="let row"> {{ row.ProjectFunderID }} </td>
-            </ng-container>            
+            <ng-container matColumnDef="LastModified">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified </th>
+                <td mat-cell *matCellDef="let row"><b>{{ row.LastModified | date : 'EEE, MMM dd y' }}</b></td>
+            </ng-container>              
 
             <!-- Status Column -->
             <ng-container matColumnDef="Status">
@@ -154,35 +144,9 @@
                     <mat-menu yPosition="below" #menu="matMenu" class="actions-menu">
                         <button 
                             mat-menu-item 
-                            *ngIf="makeChanges"
                             (click)="$event.stopPropagation();onMakeChanges(row)">
                             <mat-icon color="primary">edit</mat-icon>
                             <span>Make Changes</span>
-                        </button>
-
-                        <hr />                        
-
-                        <button 
-                            mat-menu-item 
-                            (click)="$event.stopPropagation();onPhysicalProgress(row)">
-                            <mat-icon color="primary">waterfall_chart</mat-icon>
-                            <span>Physical Progress</span>
-                        </button>
-
-                        <button 
-                            mat-menu-item 
-                            *ngIf="row.HasLandAcquisitionData === 0"
-                            (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Add')">
-                            <mat-icon color="primary">note_add</mat-icon>
-                            <span>Add Land Acquisition Details</span>
-                        </button>
-
-                        <button 
-                            mat-menu-item 
-                            *ngIf="row.HasLandAcquisitionData > 0"
-                            (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Edit')">
-                            <mat-icon color="primary">edit_note</mat-icon>
-                            <span>Edit Land Acquisition Details</span>
                         </button>
 
                         <!-- <hr />                        
@@ -211,15 +175,13 @@
                 mat-row 
                 [ngClass]="{'selected-mat-data-row': selectedRow === row}"
                 *matRowDef="let row; columns: displayedColumns"
-                (click)="onViewDetails(row)"
-                class="mat-data-row"
-                [matTooltip]="'Click to view details'">
+                class="mat-data-row">
             </tr>
 
             <!-- Row shown when there is no matching data. -->
             <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && dataSource.data.length">No data matching the filter "{{input.value}}"</td>
-                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && !dataSource.data.length">No vehicles found.</td>
+                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && !dataSource.data.length">No records found.</td>
             </tr>
         </table>
     </div>                

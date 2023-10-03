@@ -32,20 +32,20 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
     private http: HttpClient,
     private currency: CurrencyPipe,
     private number: DecimalPipe
-  ) {
-    console.log('project:', data.row);
-    console.log('action:', data.action);
-  }
+  ) {  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({     
-      LandValued: new FormControl('', [Validators.required, Validators.pattern(/^[0-9.,]+$/)]),
-      LandAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+$/)]),
+      LandValued: new FormControl('', [Validators.required, Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
+      LandAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
       PAPsValued: new FormControl('', [Validators.required, Validators.pattern(/^[0-9,]+$/)]),
       PAPsPaid: new FormControl('', [Validators.pattern(/^[0-9,]+$/)]),
-      AmountApproved: new FormControl('', [Validators.required, Validators.pattern(/^(UGX. )[0-9,]+[.]?[0-9]{1,2}$/)]),
-      AmountPaid: new FormControl('', [Validators.pattern(/^(UGX. )[0-9,]+[.]?[0-9]{1,2}$/)]),
-      KMsAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+$/)]),
+      // AmountApproved: new FormControl('', [Validators.required, Validators.pattern(/^(UGX. )[0-9,]+[.]?[0-9]{1,2}$/)]),
+      // AmountPaid: new FormControl('', [Validators.pattern(/^(UGX. )[0-9,]+[.]?[0-9]{1,2}$/)]),
+      // AmountPaid: new FormControl('', [Validators.pattern(/^(UGX. )[0-9,]+$/)]),
+      AmountApproved: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
+      AmountPaid: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
+      KMsAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
     });   
   } 
 
@@ -103,13 +103,15 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
 
   private updateForm(data: LandAcquisition): void {   
     this.form.patchValue({
-      LandValued: this.number.transform(data.LandValued, '1.0-0'),
-      LandAcquired: this.number.transform(data.LandAcquired, '1.0-0'),
+      LandValued: this.number.transform(data.LandValued, '1.2-2'),
+      LandAcquired: this.number.transform(data.LandAcquired, '1.2-2'),
       PAPsValued: this.number.transform(data.PAPsValued, '1.0-0'),
       PAPsPaid: this.number.transform(data.PAPsPaid, '1.0-0'),
-      AmountApproved: this.currency.transform(data.AmountApproved, 'UGX. ', 'symbol', '1.0-0'),
-      AmountPaid: this.currency.transform(data.AmountPaid, 'UGX. ', 'symbol', '1.0-0'),
-      KMsAcquired: this.number.transform(data.KMsAcquired, '1.0-0'),
+      // AmountApproved: this.currency.transform(data.AmountApproved, 'UGX. ', 'symbol', '1.0-0'),
+      // AmountPaid: this.currency.transform(data.AmountPaid, 'UGX. ', 'symbol', '1.0-0'),
+      AmountApproved: this.number.transform(data.AmountApproved, '1.2-2'),
+      AmountPaid: this.number.transform(data.AmountPaid, '1.2-2'),
+      KMsAcquired: this.number.transform(data.KMsAcquired, '1.2-2'),
     }); 
   }
 
@@ -119,10 +121,10 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
       ProjectID: this.data.row.ProjectID,
       LandValued: (this.form.get('LandValued').value).toString().replaceAll(',', ''),
       LandAcquired: this.form.get('LandAcquired').value ? (this.form.get('LandAcquired').value).toString().replaceAll(',', '') : '',
-      PAPsValued: (this.form.get('PAPsValued').value).toString().replaceAll(',', ''),
-      PAPsPaid: this.form.get('PAPsPaid').value ? (this.form.get('PAPsPaid').value).toString().replaceAll(',', '') : '',
-      AmountApproved: (this.form.get('AmountApproved').value).replace('UGX. ', '').toString().replaceAll(',', ''),
-      AmountPaid: this.form.get('AmountPaid').value ? (this.form.get('AmountPaid').value).toString().replace('UGX. ', '').replaceAll(',', '') : '',
+      PAPsValued: parseInt((this.form.get('PAPsValued').value).toString().replaceAll(',', ''), 10),
+      PAPsPaid: this.form.get('PAPsPaid').value ? parseInt((this.form.get('PAPsPaid').value).toString().replaceAll(',', ''), 10) : 0,
+      AmountApproved: (this.form.get('AmountApproved').value).toString().replaceAll(',', ''),
+      AmountPaid: this.form.get('AmountPaid').value ? (this.form.get('AmountPaid').value).toString().replaceAll(',', '') : '',
       KMsAcquired: this.form.get('KMsAcquired').value ? (this.form.get('KMsAcquired').value).toString().replaceAll(',', '') : '',
     };
   }

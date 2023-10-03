@@ -21,6 +21,7 @@ import { StatisticsCardComponent } from '../components/statistics-card/statistic
 import { TextHighlighterPipe } from '../pipes/text-highlighter.pipe';
 import { PieChartComponent } from '../components/pie-chart/pie-chart.component';
 import { BarGraphComponent } from '../components/bar-graph/bar-graph.component';
+import { DigitCommaSeparatorWithDecimalsDirective } from '../directives/digit-comma-separator-with-decimals.directive';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { BarGraphComponent } from '../components/bar-graph/bar-graph.component';
         StatisticsCardComponent,
         TextHighlighterPipe,
         PieChartComponent,
-        BarGraphComponent
+        BarGraphComponent,
+        DigitCommaSeparatorWithDecimalsDirective
     ],
     imports: [
         CommonModule,
@@ -64,6 +66,7 @@ import { BarGraphComponent } from '../components/bar-graph/bar-graph.component';
         TextHighlighterPipe,
         PieChartComponent,
         BarGraphComponent,
+        DigitCommaSeparatorWithDecimalsDirective,
     ],
     entryComponents: [
         SnackbarComponent,

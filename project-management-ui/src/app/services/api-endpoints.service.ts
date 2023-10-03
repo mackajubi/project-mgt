@@ -33,4 +33,7 @@ export class ApiEndpointsService {
   // LAND ACQUISITION
   landAcquisition = environment.pythonApi + 'LandAcquisition';  
   
+  // PHYSICAL PROGRESS
+  physicalProgress = environment.pythonApi + 'PhysicalProgress';  
+  
 }

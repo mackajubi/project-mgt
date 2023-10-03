@@ -1,0 +1,81 @@
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 24px 24px 24px;
+        
+        h1 {
+            font-size: 18px;
+            margin: 0px 0px 5px;
+            font-weight: 400;
+        }
+
+        p { 
+            margin: 8px 0px 8px;
+            font-weight: 600;
+            display: grid;
+            grid-template-columns: 80px auto;
+            gap: 10px;
+            font-size: 13px;   
+            font-style: italic;
+            
+            span {
+                font-style: initial;
+                font-weight: normal;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border-radius: 0px;
+            width: 44px;
+            height: 44px;
+            min-width: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;         
+        }
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px 30px;  
+        padding: 0px 24px 20px; 
+
+        .full-width {
+            grid-column: 1/-1;
+        }
+        
+        .button-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            grid-column: 1/-1;
+
+            button {
+                min-width: 100px !important;
+                
+                &:disabled {
+                    opacity: .5;
+                    color: #333 !important;
+                }
+            }
+            
+            button.back-btn {
+                background-color: #ebebeb;
+                color: #333;
+            }       
+        }
+    }
+}

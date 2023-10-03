@@ -1,6 +1,6 @@
 import { Component, OnDestroy, ViewChild, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, startWith } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -8,26 +8,20 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiPayload, Employee } from 'src/app/services/api.model';
 import { ApiEndpointsService } from 'src/app/services/api-endpoints.service';
-import { forkJoin, Observable, Subscription } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { trigger, query, style, transition, stagger, animate } from '@angular/animations';
-import { DatePipe } from '@angular/common';
-// import { NewVehicleDialogComponent } from 'src/app/dialogs/new-vehicle-dialog/new-vehicle-dialog.component';
-// import { Insurance, RecordAction, Vehicle } from '../../workspace.model';
-// import { MakeFuelRequestDialogComponent } from 'src/app/dialogs/make-fuel-request-dialog/make-fuel-request-dialog.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
-// import { NewInsuranceDialogComponent } from 'src/app/dialogs/new-insurance-dialog/new-insurance-dialog.component';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Project } from '../workspace.model';
+import { PhysicalProgress } from '../workspace.model';
 import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-dialog.component';
 import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PhysicalProgressDialogComponent } from 'src/app/dialogs/physical-progress-dialog/physical-progress-dialog.component';
-import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-bridges-development',
-  templateUrl: './bridges-development.component.html',
-  styleUrls: ['./bridges-development.component.scss'],
+  selector: 'app-project-physical-progress',
+  templateUrl: './project-physical-progress.component.html',
+  styleUrls: ['./project-physical-progress.component.scss'],
   animations: [
     trigger('fadeIn', [
       transition('* => *', [
@@ -46,32 +40,31 @@ import { Router } from '@angular/router';
         ], { optional: true })
       ])
     ])
-  ]  
+  ]    
 })
-export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, OnDestroy {
 
   dialogRef?: any;
   processing = true;
   displayedColumns: string[] = [
     'count',
-    'ProjectNumber',
-    'ProjectName',
-    // 'RoadLength',
-    // 'SurfaceType',
-    'ProjectManager',
-    'ProjectEngineer',
-    'SupervisingConsultant',
-    'WorksContractAmount',
-    'WorksContractor',
-    'ProjectFunderID',
+    'Duration',
+    'PlannedProgress',
+    'ActualProgress',
+    'CummulativePlannedProgress',
+    'CummulativeActualProgress',
+    'PhysicalStatus',
+    'ModifiedBy',
+    'LastModified',
     'Actions'
   ];
-  dataSource: MatTableDataSource<Project>;
-  selectedRow: Project | null;
+  dataSource: MatTableDataSource<PhysicalProgress>;
+  selectedRow: PhysicalProgress | null;
   httpSub: Subscription;
-  user: Employee | null;
   makeChanges = false;
   toggleTableActionIcon = true;
+  routeSub: Subscription;
+  routeParams: { ProjectNumber: string } | null;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
@@ -82,11 +75,13 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
     private endpoints: ApiEndpointsService,
     private dialog: MatDialog,
     private sidebarService: SidebarService,
-    private router: Router,
+    private route: ActivatedRoute,
   ) {
-    this.user = this.service.getUser;
-
-    // console.log('user:', this.user);
+    this.routeSub = this.route.paramMap.subscribe((params: ParamMap) => {
+      this.routeParams = {
+        ProjectNumber: params.get('ProjectNumber'),
+      };
+    });      
   }
 
   ngOnInit(): void {
@@ -107,28 +102,22 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
     }
   }
 
-  checkAccess(): void { 
-    this.makeChanges = this.sidebarService.checkAccess(this.user, 'update.projects');
-  }
-
   onFetch(): void {
     this.processing = true;
     this.service.processingBar.next(this.processing);
 
-    this.httpSub = this.http.get<ApiPayload>(this.endpoints.projects, {
+    this.httpSub = this.http.get<ApiPayload>(this.endpoints.physicalProgress, {
       params: {
-        Project: '4'
+        Project: this.routeParams.ProjectNumber
       }
     })
     .pipe(catchError(this.service.handleError))
     .subscribe((response) => {
-      const data: Project[] = response.data;
+      const data: PhysicalProgress[] = response.data;
 
       this.dataSource = new MatTableDataSource(data);
 
-      setTimeout(() => {
-        this.checkAccess();
-        
+      setTimeout(() => {        
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 
@@ -144,12 +133,28 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
     });
   }
 
-  onMakeChanges(row: Project): void {
+  onAddProgress(): void {
+    console.log('show the add new progress dialog.');
     // console.log('view project details:', row);
-    this.dialogRef = this.dialog.open(ProjectDialogComponent, {
-      panelClass: ['project-dialog', 'dialogs'],
+    this.dialogRef = this.dialog.open(PhysicalProgressDialogComponent, {
+      panelClass: ['physical-progress-dialog', 'dialogs'],
       disableClose: true,
-      data: { row }
+      data: { ProjectNumber: this.routeParams.ProjectNumber }
+    });
+
+    this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {
+      if (result.status) {
+        this.onFetch();
+      }
+    });     
+  }
+
+  onMakeChanges(row: PhysicalProgress): void {
+    // console.log('view project details:', row);
+    this.dialogRef = this.dialog.open(PhysicalProgressDialogComponent, {
+      panelClass: ['physical-progress-dialog', 'dialogs'],
+      disableClose: true,
+      data: { row, ProjectNumber: this.routeParams.ProjectNumber }
     });
 
     this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {
@@ -157,33 +162,6 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
         this.onFetch();
       }
     }); 
-  }
-
-  onManageLandAcquisitionData(row: Project, action: string): void {
-    console.log('view project details:', row);
-    console.log('action:', action);
-    this.dialogRef = this.dialog.open(LandAcquisitionDialogComponent, {
-      panelClass: ['land-acquisition-dialog', 'dialogs'],
-      disableClose: true,
-      data: { row, action },
-    });
-
-    this.dialogRef.afterClosed().subscribe((result: { status: boolean, row: any }) => {
-      if (result.status) {
-        this.onFetch();
-      }
-    });     
-  }  
-
-  onPhysicalProgress(row: Project): void {
-    console.log('view project details:', row);   
-    this.router.navigate(['my-account/bridges-development/physical-progress/' + row.ProjectNumber]);
-  }  
-
-  onViewDetails(row: Project): void {
-    console.log('view vehicle details:', row);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.NumberPlate]);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.VehicleCode]);
   }
 
   onToggleTableActionIcon(): void {

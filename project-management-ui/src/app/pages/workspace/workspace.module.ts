@@ -18,6 +18,8 @@ import { RoadDevelopmentComponent } from './road-development/road-development.co
 import { RoadRehabilitationComponent } from './road-rehabilitation/road-rehabilitation.component';
 import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-dialog.component';
 import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
+import { PhysicalProgressDialogComponent } from 'src/app/dialogs/physical-progress-dialog/physical-progress-dialog.component';
+import { ProjectPhysicalProgressComponent } from './project-physical-progress/project-physical-progress.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,9 @@ import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition
         RoadDevelopmentComponent,
         RoadRehabilitationComponent,
         ProjectDialogComponent,
-        LandAcquisitionDialogComponent        
+        LandAcquisitionDialogComponent  ,
+        PhysicalProgressDialogComponent,
+        ProjectPhysicalProgressComponent      
     ],
     imports: [
         CommonModule,
@@ -42,7 +46,8 @@ import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition
     ],
     entryComponents: [
         ProjectDialogComponent,
-        LandAcquisitionDialogComponent
+        LandAcquisitionDialogComponent,
+        PhysicalProgressDialogComponent
     ],
     providers: [
         SidebarService,

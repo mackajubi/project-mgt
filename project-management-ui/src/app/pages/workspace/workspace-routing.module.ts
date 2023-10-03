@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BridgesDevelopmentComponent } from './bridges-development/bridges-development.component';
 import { RoadDevelopmentComponent } from './road-development/road-development.component';
 import { RoadRehabilitationComponent } from './road-rehabilitation/road-rehabilitation.component';
+import { ProjectPhysicalProgressComponent } from './project-physical-progress/project-physical-progress.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,27 @@ const routes: Routes = [
         component: RoadRehabilitationComponent,
         data: {
           title: 'Road Rehabilitation'
+        }
+      },      
+      {
+        path: 'bridges-development/physical-progress/:ProjectNumber',
+        component: ProjectPhysicalProgressComponent,
+        data: {
+          title: 'Physical Progress'
+        }
+      },      
+      {
+        path: 'road-development/physical-progress/:ProjectNumber',
+        component: ProjectPhysicalProgressComponent,
+        data: {
+          title: 'Physical Progress'
+        }
+      },      
+      {
+        path: 'road-rehabilitation/physical-progress/:ProjectNumber',
+        component: ProjectPhysicalProgressComponent,
+        data: {
+          title: 'Physical Progress'
         }
       },      
     ]

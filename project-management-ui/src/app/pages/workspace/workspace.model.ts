@@ -27,6 +27,7 @@ export interface Project {
     ProjectStatus: string;
     HasLandAcquisitionData: number;
 }
+
 export interface LandAcquisition {
     LandID: number;
     LandValued: string;
@@ -37,6 +38,19 @@ export interface LandAcquisition {
     AmountPaid: string;
     KMsAcquired: string;
     ProjectID?: number;
+}
+
+export interface PhysicalProgress {
+    PhysicalID: number;
+    Duration: Date;
+    PlannedProgress: string;
+    ActualProgress: string;
+    CummulativePlannedProgress: string;
+    CummulativeActualProgress: string;
+    ProjectID: number;
+    PhysicalStatus: string;
+    ModifiedBy: string;
+    LastModified: Date;
 }
 
 export interface Workflow {
