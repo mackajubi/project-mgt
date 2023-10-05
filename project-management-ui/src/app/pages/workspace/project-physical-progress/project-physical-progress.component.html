@@ -103,11 +103,6 @@
                 <td mat-cell *matCellDef="let row"> {{ row.CummulativeActualProgress | number : '1.0-2' }} </td>
             </ng-container>
 
-            <ng-container matColumnDef="PhysicalStatus">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-                <td mat-cell *matCellDef="let row"> {{ row.PhysicalStatus }} </td>
-            </ng-container>
-
             <ng-container matColumnDef="ModifiedBy">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Modified By </th>
                 <td mat-cell *matCellDef="let row"> {{ row.ModifiedBy }} </td>
@@ -119,11 +114,11 @@
             </ng-container>              
 
             <!-- Status Column -->
-            <ng-container matColumnDef="Status">
+            <ng-container matColumnDef="PhysicalStatus">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
                 <td mat-cell *matCellDef="let row"> 
-                    <div [ngClass]="{'enabled-status': row.Status, 'disabled-status': !row.Status}">
-                        {{ row.Status ? 'Enabled' : 'Disabled' }}
+                    <div [ngClass]="{'green': row.PhysicalStatus === 'Active', 'danger': row.PhysicalStatus === 'Inactive'}">
+                        {{ row.PhysicalStatus }}
                     </div>
                 </td>
             </ng-container> 

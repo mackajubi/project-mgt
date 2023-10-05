@@ -20,6 +20,10 @@ import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-d
 import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
 import { PhysicalProgressDialogComponent } from 'src/app/dialogs/physical-progress-dialog/physical-progress-dialog.component';
 import { ProjectPhysicalProgressComponent } from './project-physical-progress/project-physical-progress.component';
+import { ProjectFinancialProgressComponent } from './project-financial-progress/project-financial-progress.component';
+import { FinancialProgressDialogComponent } from 'src/app/dialogs/financial-progress-dialog/financial-progress-dialog.component';
+import { ProjectLandAcquisitionComponent } from './project-land-acquisition/project-land-acquisition.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +38,11 @@ import { ProjectPhysicalProgressComponent } from './project-physical-progress/pr
         ProjectDialogComponent,
         LandAcquisitionDialogComponent  ,
         PhysicalProgressDialogComponent,
-        ProjectPhysicalProgressComponent      
+        ProjectPhysicalProgressComponent,
+        ProjectFinancialProgressComponent,
+        FinancialProgressDialogComponent,
+        ProjectLandAcquisitionComponent,
+        ProjectDetailsComponent,
     ],
     imports: [
         CommonModule,
@@ -47,7 +55,8 @@ import { ProjectPhysicalProgressComponent } from './project-physical-progress/pr
     entryComponents: [
         ProjectDialogComponent,
         LandAcquisitionDialogComponent,
-        PhysicalProgressDialogComponent
+        PhysicalProgressDialogComponent,
+        FinancialProgressDialogComponent
     ],
     providers: [
         SidebarService,

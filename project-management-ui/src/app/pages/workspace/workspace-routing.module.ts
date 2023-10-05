@@ -7,6 +7,9 @@ import { BridgesDevelopmentComponent } from './bridges-development/bridges-devel
 import { RoadDevelopmentComponent } from './road-development/road-development.component';
 import { RoadRehabilitationComponent } from './road-rehabilitation/road-rehabilitation.component';
 import { ProjectPhysicalProgressComponent } from './project-physical-progress/project-physical-progress.component';
+import { ProjectFinancialProgressComponent } from './project-financial-progress/project-financial-progress.component';
+import { ProjectLandAcquisitionComponent } from './project-land-acquisition/project-land-acquisition.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 const routes: Routes = [
   {
@@ -47,6 +50,27 @@ const routes: Routes = [
         }
       },      
       {
+        path: 'bridges-development/project/:ProjectNumber',
+        component: ProjectDetailsComponent,
+        data: {
+          title: 'Project Details'
+        }
+      },      
+      {
+        path: 'road-development/project/:ProjectNumber',
+        component: ProjectDetailsComponent,
+        data: {
+          title: 'Project Details'
+        }
+      },      
+      {
+        path: 'road-rehabilitation/project/:ProjectNumber',
+        component: ProjectDetailsComponent,
+        data: {
+          title: 'Project Details'
+        }
+      },      
+      {
         path: 'bridges-development/physical-progress/:ProjectNumber',
         component: ProjectPhysicalProgressComponent,
         data: {
@@ -65,6 +89,48 @@ const routes: Routes = [
         component: ProjectPhysicalProgressComponent,
         data: {
           title: 'Physical Progress'
+        }
+      },      
+      {
+        path: 'bridges-development/financial-progress/:ProjectNumber',
+        component: ProjectFinancialProgressComponent,
+        data: {
+          title: 'Financial Progress'
+        }
+      },      
+      {
+        path: 'road-development/financial-progress/:ProjectNumber',
+        component: ProjectFinancialProgressComponent,
+        data: {
+          title: 'Financial Progress'
+        }
+      },      
+      {
+        path: 'road-rehabilitation/financial-progress/:ProjectNumber',
+        component: ProjectFinancialProgressComponent,
+        data: {
+          title: 'Financial Progress'
+        }
+      },      
+      {
+        path: 'bridges-development/land-acquisition/:ProjectNumber',
+        component: ProjectLandAcquisitionComponent,
+        data: {
+          title: 'Land Acquisition'
+        }
+      },      
+      {
+        path: 'road-development/land-acquisition/:ProjectNumber',
+        component: ProjectLandAcquisitionComponent,
+        data: {
+          title: 'Land Acquisition'
+        }
+      },      
+      {
+        path: 'road-rehabilitation/land-acquisition/:ProjectNumber',
+        component: ProjectLandAcquisitionComponent,
+        data: {
+          title: 'Land Acquisition'
         }
       },      
     ]

@@ -34,7 +34,7 @@ class LandAcquisition(Resource):
 
         data = []
 
-        sp_stmt = "exec getLandAcquisition @ProjectID=?"
+        sp_stmt = "exec getLandAcquisition @ProjectNumber=?"
 
         results = utils._do_select(sp_stmt, (payload['Project']))
         
@@ -42,13 +42,18 @@ class LandAcquisition(Resource):
 
             data = utils._object(results['data'], [
                 "LandID",
+                "Duration",
                 "LandValued",
                 "LandAcquired",
                 "PAPsValued",
                 "PAPsPaid",
                 "AmountApproved",
                 "AmountPaid",
-                "KMsAcquired"
+                "KMsAcquired",
+                "ProjectID",
+                "Status",
+                "ModifiedBy",
+                "LastModified"                
             ], True)
 
         return {
@@ -62,76 +67,38 @@ class LandAcquisition(Resource):
     @api.response(400, 'Validation error')
     @api.expect(create_land_acquisition)
     def post(self):
-        payload = api.payload
+        payload = api.payload  
 
-        print('payload:', payload)      
+        current_user = get_jwt_identity()       
 
-        current_user = get_jwt_identity()    
-
-        return {
-            'message': 'Operation Successful. Project information updated.', 
-            'code': 200, 
-            'data': ""
-        }, 200        
-
-        sp_stmt = """exec updateProjects 
-                @ProjectID = ?,
+        sp_stmt = """exec createLandAcquisition 
                 @ProjectNumber = ?,
-                @ProjectName = ?,
-                @RoadLength = ?,
-                @SurfaceType = ?,
-                @ProjectManager = ?,
-                @ProjectEngineer = ?,
-                @WorksSignatureDate = ?,
-                @CommencementDate = ?,
-                @WorksCompletionDate = ?,
-                @RevisedCompletionDate = ?,
-                @SupervisingConsultant = ?,
-                @SupervisionSignatureDate = ?,
-                @SupervisionCompletionDate = ?,
-                @SupervisingConsultantContractAmount = ?,
-                @RevisedSCContractAmount = ?,
-                @SupervisionProcurementNumber = ?,
-                @WorksContractAmount = ?,
-                @RevisedWorksContractAmount = ?,
-                @WorksContractor = ?,
-                @WorksProcurementNumber = ?,
-                @ProjectTypeID = ?,
-                @ProjectFunderID = ?,	
-                @UpdatedBy = ?
+                @Duration = ?,
+                @LandValued = ?,
+                @LandAcquired = ?,
+                @PAPsValued = ?,
+                @PAPsPaid = ?,
+                @AmountApproved = ?,
+                @AmountPaid = ?,
+                @KMsAcquired = ?,
+                @Username = ?
         """
         results = utils._do_update_or_insert(sp_stmt, (
-			payload['ProjectID'],
 			payload['ProjectNumber'],
-			payload['ProjectName'],
-			payload['RoadLength'],
-			payload['SurfaceType'],
-			payload['ProjectManager'],
-			payload['ProjectEngineer'],
-			payload['WorksSignatureDate'],
-			payload['CommencementDate'],
-			payload['WorksCompletionDate'],
-			payload['RevisedCompletionDate'],
-			payload['SupervisingConsultant'],
-			payload['SupervisionSignatureDate'],
-			payload['SupervisionCompletionDate'],
-			payload['SupervisingConsultantContractAmount'],
-			payload['RevisedSCContractAmount'],
-			payload['SupervisionProcurementNumber'],
-			payload['WorksContractAmount'],
-			payload['RevisedWorksContractAmount'],
-			payload['WorksContractor'],
-			payload['WorksProcurementNumber'],
-			payload['ProjectTypeID'],
-			payload['ProjectFunderID'],	
+			payload['Duration'],
+			payload['LandValued'],
+			payload['LandAcquired'],
+			payload['PAPsValued'],
+			payload['PAPsPaid'],
+			payload['AmountApproved'],	
+			payload['AmountPaid'],	
+			payload['KMsAcquired'],	
             current_user['UserName']
         ))
 
-        print('results:---', results)
-
         if results["status"] and results['rowcount'] == 1:
             return {
-                'message': 'Operation Successful. Project information updated.', 
+                'message': 'Operation Successful. Land Acquisition information added.', 
                 'code': 200, 
                 'data': ""
             }, 200
@@ -147,76 +114,40 @@ class LandAcquisition(Resource):
     @api.response(400, 'Validation error')
     @api.expect(put_land_acquisition_parser)
     def put(self):
-        payload = api.payload
+        payload = api.payload   
 
-        print('payload:', payload)      
+        current_user = get_jwt_identity()       
 
-        current_user = get_jwt_identity()    
-
-        return {
-            'message': 'Operation Successful. Project information updated.', 
-            'code': 200, 
-            'data': ""
-        }, 200        
-
-        sp_stmt = """exec updateProjects 
-                @ProjectID = ?,
+        sp_stmt = """exec updateLandAcquisition 
+                @LandID = ?,
                 @ProjectNumber = ?,
-                @ProjectName = ?,
-                @RoadLength = ?,
-                @SurfaceType = ?,
-                @ProjectManager = ?,
-                @ProjectEngineer = ?,
-                @WorksSignatureDate = ?,
-                @CommencementDate = ?,
-                @WorksCompletionDate = ?,
-                @RevisedCompletionDate = ?,
-                @SupervisingConsultant = ?,
-                @SupervisionSignatureDate = ?,
-                @SupervisionCompletionDate = ?,
-                @SupervisingConsultantContractAmount = ?,
-                @RevisedSCContractAmount = ?,
-                @SupervisionProcurementNumber = ?,
-                @WorksContractAmount = ?,
-                @RevisedWorksContractAmount = ?,
-                @WorksContractor = ?,
-                @WorksProcurementNumber = ?,
-                @ProjectTypeID = ?,
-                @ProjectFunderID = ?,	
-                @UpdatedBy = ?
+                @Duration = ?,
+                @LandValued = ?,
+                @LandAcquired = ?,
+                @PAPsValued = ?,
+                @PAPsPaid = ?,
+                @AmountApproved = ?,
+                @AmountPaid = ?,
+                @KMsAcquired = ?,
+                @Username = ?
         """
         results = utils._do_update_or_insert(sp_stmt, (
-			payload['ProjectID'],
+			payload['LandID'],
 			payload['ProjectNumber'],
-			payload['ProjectName'],
-			payload['RoadLength'],
-			payload['SurfaceType'],
-			payload['ProjectManager'],
-			payload['ProjectEngineer'],
-			payload['WorksSignatureDate'],
-			payload['CommencementDate'],
-			payload['WorksCompletionDate'],
-			payload['RevisedCompletionDate'],
-			payload['SupervisingConsultant'],
-			payload['SupervisionSignatureDate'],
-			payload['SupervisionCompletionDate'],
-			payload['SupervisingConsultantContractAmount'],
-			payload['RevisedSCContractAmount'],
-			payload['SupervisionProcurementNumber'],
-			payload['WorksContractAmount'],
-			payload['RevisedWorksContractAmount'],
-			payload['WorksContractor'],
-			payload['WorksProcurementNumber'],
-			payload['ProjectTypeID'],
-			payload['ProjectFunderID'],	
+			payload['Duration'],
+			payload['LandValued'],
+			payload['LandAcquired'],
+			payload['PAPsValued'],
+			payload['PAPsPaid'],
+			payload['AmountApproved'],	
+			payload['AmountPaid'],	
+			payload['KMsAcquired'],	
             current_user['UserName']
         ))
 
-        print('results:---', results)
-
         if results["status"] and results['rowcount'] == 1:
             return {
-                'message': 'Operation Successful. Project information updated.', 
+                'message': 'Operation Successful. Land Acquisition information updated.', 
                 'code': 200, 
                 'data': ""
             }, 200

@@ -1,0 +1,205 @@
+<main class="main-scrollbar">
+
+    <header class="table-header">
+
+        <section>
+            <h3>
+                <span>Total: </span> 
+                <b>{{ dataSource?.data.length || 0 }}</b>
+            </h3>
+
+            <mat-form-field appearance="fill" class="search-input">
+                <input matInput [disabled]="processing" #input placeholder="Search" (keyup)="applyFilter($event.target.value)">
+                <mat-icon *ngIf="input.value" (click)="input.value = null;applyFilter('')" class="clear-mat-icon">clear</mat-icon>
+            </mat-form-field>    
+            
+            <button 
+                mat-button 
+                [disabled]="processing"
+                class="table-action-btn"
+                (click)="onToggleTableActionIcon()"
+                [matMenuTriggerFor]="TableMenu" 
+                matTooltip="See more options">
+                <div class="btn-label">
+                    <span>Actions</span>
+                    <mat-icon>{{ toggleTableActionIcon ? 'arrow_drop_down': 'arrow_drop_up' }}</mat-icon>
+                </div>
+            </button>   
+            
+            <mat-menu (closed)="onToggleTableActionIcon()" yPosition="below" #TableMenu="matMenu" class="actions-menu">
+                <button 
+                    mat-menu-item
+                    (click)="onFetch()">
+                    <mat-icon>sync</mat-icon>
+                    <span>Reload</span>
+                </button>
+
+                <button 
+                    mat-menu-item 
+                    (click)="onAddLandAcquisition()">
+                    <mat-icon color="primary">add</mat-icon>
+                    <span>Add Land Acquisition</span>
+                </button>
+            </mat-menu>              
+        </section>
+
+        <section>
+            <button 
+                mat-button 
+                class="fadeInUp _delay2ms"
+                (click)="onFetch()" 
+                [disabled]="processing" 
+                matTooltip="Reload the table">
+                <mat-icon>sync</mat-icon>
+            </button>
+                        
+            <button 
+                class="add-an-item fadeInUp _delay1ms"
+                color="primary"
+                mat-raised-button
+                (click)="onAddLandAcquisition()"
+                [disabled]="processing">
+                Add Land Acquisition
+            </button>                   
+        </section>
+        
+    </header>
+
+    <div class="table-container">
+        <table 
+            [@fadeIn]="dataSource ? dataSource.data.length : 0"
+            mat-table 
+            matSortDisableClear="true"
+            [dataSource]="dataSource"
+            matSort>
+
+            <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef> # </th>
+                <td mat-cell *matCellDef="let index = index"> {{ index + 1 }} </td>
+            </ng-container>   
+
+            <ng-container matColumnDef="Duration">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+                <td mat-cell *matCellDef="let row"><b>{{ row.Duration | date : 'EEE, MMM dd y' }}</b></td>
+            </ng-container>               
+
+            <ng-container matColumnDef="LandValued">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Land Valued </th>
+                <td mat-cell *matCellDef="let row"><b>{{ row.LandValued | number : '1.0-2' }}</b></td>
+            </ng-container>          
+
+            <ng-container matColumnDef="LandAcquired">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Land Acquired </th>
+                <td mat-cell *matCellDef="let row"> {{ row.LandAcquired | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="PAPsValued">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> PAPs Valued </th>
+                <td mat-cell *matCellDef="let row"> {{ row.PAPsValued | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="PAPsPaid">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> PAPs Paid </th>
+                <td mat-cell *matCellDef="let row"> {{ row.PAPsPaid | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="AmountApproved">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount Approved (UGX)</th>
+                <td mat-cell *matCellDef="let row"> {{ row.AmountApproved | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="AmountPaid">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount Paid (UGX)</th>
+                <td mat-cell *matCellDef="let row"> {{ row.AmountPaid | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="KMsAcquired">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> KMs Acquired </th>
+                <td mat-cell *matCellDef="let row"> {{ row.KMsAcquired | number : '1.0-2' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ModifiedBy">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Modified By </th>
+                <td mat-cell *matCellDef="let row"> {{ row.ModifiedBy }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="LastModified">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified </th>
+                <td mat-cell *matCellDef="let row"><b>{{ row.LastModified | date : 'EEE, MMM dd y' }}</b></td>
+            </ng-container>              
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row"> 
+                    <div [ngClass]="{'green': row.Status === 'Active', 'danger': row.Status === 'Inactive'}">
+                        {{ row.Status }}
+                    </div>
+                </td>
+            </ng-container> 
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let row" (click)="$event.stopPropagation()">
+                    <button 
+                        mat-button 
+                        [disabled]="processing"
+                        class="action-btn"
+                        [matMenuTriggerFor]="menu" 
+                        matTooltip="See more options">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+
+                    <mat-menu yPosition="below" #menu="matMenu" class="actions-menu">
+                        <button 
+                            mat-menu-item 
+                            (click)="$event.stopPropagation();onMakeChanges(row)">
+                            <mat-icon color="primary">edit</mat-icon>
+                            <span>Make Changes</span>
+                        </button>
+
+                        <!-- <hr />                        
+
+                        <button 
+                            mat-menu-item 
+                            *ngIf="row.Status === 'N'"
+                            (click)="$event.stopPropagation();onManageVehicleStatus(row, 'Enable')">
+                            <mat-icon color="primary">check_circle</mat-icon>
+                            <span>Enable</span>
+                        </button>
+
+                        <button 
+                            mat-menu-item 
+                            *ngIf="row.Status === 'Y'"
+                            (click)="$event.stopPropagation();onManageVehicleStatus(row, 'Disable')">
+                            <mat-icon color="warn">block</mat-icon>
+                            <span>Disable</span>
+                        </button> -->
+                    </mat-menu>                                                  
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr 
+                mat-row 
+                [ngClass]="{'selected-mat-data-row': selectedRow === row}"
+                *matRowDef="let row; columns: displayedColumns"
+                class="mat-data-row">
+            </tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && dataSource.data.length">No data matching the filter "{{input.value}}"</td>
+                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && !dataSource.data.length">No records found.</td>
+            </tr>
+        </table>
+    </div>                
+
+    <mat-paginator 
+        [pageSize]="10"
+        showFirstLastButtons
+        [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+
+</main>

@@ -176,14 +176,19 @@ export class BridgesDevelopmentComponent implements OnInit, AfterViewInit, OnDes
   }  
 
   onPhysicalProgress(row: Project): void {
-    console.log('view project details:', row);   
     this.router.navigate(['my-account/bridges-development/physical-progress/' + row.ProjectNumber]);
   }  
 
+  onFinancialProgress(row: Project): void {
+    this.router.navigate(['my-account/bridges-development/financial-progress/' + row.ProjectNumber]);
+  }  
+
+  onLandAcquisition(row: Project): void {
+    this.router.navigate(['my-account/bridges-development/land-acquisition/' + row.ProjectNumber]); 
+  }  
+
   onViewDetails(row: Project): void {
-    console.log('view vehicle details:', row);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.NumberPlate]);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.VehicleCode]);
+    this.router.navigate(['my-account/bridges-development/project/' + row.ProjectNumber]);
   }
 
   onToggleTableActionIcon(): void {

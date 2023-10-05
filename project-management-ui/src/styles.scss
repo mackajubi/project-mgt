@@ -317,6 +317,7 @@ td.no-items-found {
     }    
 }
 
+.financial-progress-dialog,
 .physical-progress-dialog {
     width: 650px;
 }
@@ -514,6 +515,48 @@ header.table-header {
             cursor: pointer;
             transition: 330ms ease-in-out;                        
         }                 
+
+        .green {
+            background-color: #16b43d;
+            color: #fff;
+        }
+
+        .warning {
+            background-color: #feba25;
+        }
+
+        .danger {
+            background-color: #f44336;
+            color: #fff;
+        }            
+
+        .cancel {
+            background-color: #be29ec;
+            color: #fff;
+        }            
+
+        .cancel,
+        .green,
+        .warning,
+        .danger {
+            text-align: center;
+            padding: 6px 8px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            line-height: 11px;
+            min-height: 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            // h1 {
+            //     margin: 0;
+            //     font-size: 10px;
+            //     letter-spacing: 1px;                    
+            // }
+        }
 
         .action-btn {
             padding: 0px;

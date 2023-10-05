@@ -9,18 +9,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { ApiPayload, Employee } from 'src/app/services/api.model';
 import { ApiEndpointsService } from 'src/app/services/api-endpoints.service';
 import { forkJoin, Observable, Subscription } from 'rxjs';
-import { FormControl } from '@angular/forms';
 import { trigger, query, style, transition, stagger, animate } from '@angular/animations';
 import { DatePipe } from '@angular/common';
-// import { NewVehicleDialogComponent } from 'src/app/dialogs/new-vehicle-dialog/new-vehicle-dialog.component';
-// import { Insurance, RecordAction, Vehicle } from '../../workspace.model';
-// import { MakeFuelRequestDialogComponent } from 'src/app/dialogs/make-fuel-request-dialog/make-fuel-request-dialog.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
-// import { NewInsuranceDialogComponent } from 'src/app/dialogs/new-insurance-dialog/new-insurance-dialog.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Project } from '../workspace.model';
 import { ProjectDialogComponent } from 'src/app/dialogs/project-dialog/project-dialog.component';
-
+import { LandAcquisitionDialogComponent } from 'src/app/dialogs/land-acquisition-dialog/land-acquisition-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-road-development',
@@ -77,11 +73,10 @@ export class RoadDevelopmentComponent implements OnInit, AfterViewInit, OnDestro
   constructor(
     private http: HttpClient,
     private service: ApiService,
-    private endPoints: ApiEndpointsService,
+    private endpoints: ApiEndpointsService,
     private dialog: MatDialog,
-    private datePipe: DatePipe,
     private sidebarService: SidebarService,
-    private sanitizer: DomSanitizer 
+    private router: Router,
   ) {
     this.user = this.service.getUser;
 
@@ -114,7 +109,7 @@ export class RoadDevelopmentComponent implements OnInit, AfterViewInit, OnDestro
     this.processing = true;
     this.service.processingBar.next(this.processing);
 
-    this.httpSub = this.http.get<ApiPayload>(this.endPoints.projects, {
+    this.httpSub = this.http.get<ApiPayload>(this.endpoints.projects, {
       params: {
         Project: '1'
       }
@@ -151,17 +146,43 @@ export class RoadDevelopmentComponent implements OnInit, AfterViewInit, OnDestro
       data: { row }
     });
 
-    this.dialogRef.afterClosed().subscribe((result: { status: boolean, vehicle: any }) => {
+    this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {
       if (result.status) {
         this.onFetch();
       }
     }); 
   }
 
+  onManageLandAcquisitionData(row: Project, action: string): void {
+    console.log('view project details:', row);
+    console.log('action:', action);
+    this.dialogRef = this.dialog.open(LandAcquisitionDialogComponent, {
+      panelClass: ['land-acquisition-dialog', 'dialogs'],
+      disableClose: true,
+      data: { row, action },
+    });
+
+    this.dialogRef.afterClosed().subscribe((result: { status: boolean, row: any }) => {
+      if (result.status) {
+        this.onFetch();
+      }
+    });     
+  }  
+
+  onPhysicalProgress(row: Project): void {
+    this.router.navigate(['my-account/road-development/physical-progress/' + row.ProjectNumber]);
+  }  
+
+  onFinancialProgress(row: Project): void {
+    this.router.navigate(['my-account/road-development/financial-progress/' + row.ProjectNumber]);
+  }  
+
+  onLandAcquisition(row: Project): void {
+    this.router.navigate(['my-account/road-development/land-acquisition/' + row.ProjectNumber]); 
+  }  
+
   onViewDetails(row: Project): void {
-    console.log('view vehicle details:', row);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.NumberPlate]);
-    // this.router.navigate(['my-account/equipment/vehicles/' + row.VehicleCode]);
+    this.router.navigate(['my-account/road-development/project/' + row.ProjectNumber]);
   }
 
   onToggleTableActionIcon(): void {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, ViewChild, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, OnDestroy, ViewChild, AfterViewInit, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
@@ -42,7 +42,7 @@ import { PhysicalProgressDialogComponent } from 'src/app/dialogs/physical-progre
     ])
   ]    
 })
-export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ProjectPhysicalProgressComponent implements AfterViewInit, OnDestroy {
 
   dialogRef?: any;
   processing = true;
@@ -64,7 +64,8 @@ export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, 
   makeChanges = false;
   toggleTableActionIcon = true;
   routeSub: Subscription;
-  routeParams: { ProjectNumber: string } | null;
+
+  @Input() ProjectNumber: string = null;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
@@ -74,19 +75,7 @@ export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, 
     private service: ApiService,
     private endpoints: ApiEndpointsService,
     private dialog: MatDialog,
-    private sidebarService: SidebarService,
-    private route: ActivatedRoute,
-  ) {
-    this.routeSub = this.route.paramMap.subscribe((params: ParamMap) => {
-      this.routeParams = {
-        ProjectNumber: params.get('ProjectNumber'),
-      };
-    });      
-  }
-
-  ngOnInit(): void {
-
-  }
+  ) { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {  
@@ -108,7 +97,7 @@ export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, 
 
     this.httpSub = this.http.get<ApiPayload>(this.endpoints.physicalProgress, {
       params: {
-        Project: this.routeParams.ProjectNumber
+        Project: this.ProjectNumber
       }
     })
     .pipe(catchError(this.service.handleError))
@@ -139,7 +128,7 @@ export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, 
     this.dialogRef = this.dialog.open(PhysicalProgressDialogComponent, {
       panelClass: ['physical-progress-dialog', 'dialogs'],
       disableClose: true,
-      data: { ProjectNumber: this.routeParams.ProjectNumber }
+      data: { ProjectNumber: this.ProjectNumber }
     });
 
     this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {
@@ -154,7 +143,7 @@ export class ProjectPhysicalProgressComponent implements OnInit, AfterViewInit, 
     this.dialogRef = this.dialog.open(PhysicalProgressDialogComponent, {
       panelClass: ['physical-progress-dialog', 'dialogs'],
       disableClose: true,
-      data: { row, ProjectNumber: this.routeParams.ProjectNumber }
+      data: { row, ProjectNumber: this.ProjectNumber }
     });
 
     this.dialogRef.afterClosed().subscribe((result: { status: boolean, project: any }) => {

@@ -4,7 +4,7 @@ from flask_jwt_extended import (
     get_jwt_identity    
 )
 from helpers import utils
-from apis.Project.parsers import project_parser
+from apis.Project.parsers import project_parser, get_project_parser
 from apis.Project.models import project_model
 
 api = Namespace('Projects', description='Project endpoints.')
@@ -154,5 +154,57 @@ class Project(Resource):
             'data':""
         }, 400
 
+@api.route('/GetProject')
+class Project(Resource):
+    @jwt_required
+    @api.response(200, 'OK')
+    @api.response(400, 'Validation error')
+    @api.expect(get_project_parser)
+    def get(self):
 
+        payload = get_project_parser.parse_args()
+
+        data = []
+
+        sp_stmt = "exec getProjects @ProjectNumber=?"
+
+        results = utils._do_select(sp_stmt, (payload['Project']))
+        
+        if results["status"] and len(results['data']):  
+
+            data = utils._object(results['data'], [
+                "ProjectID",
+                "ProjectNumber",
+                "ProjectName",
+                "RoadLength",
+                "SurfaceType",
+                "ProjectManager",
+                "ProjectEngineer",
+                "WorksSignatureDate",
+                "CommencementDate",
+                "WorksCompletionDate",
+                "RevisedCompletionDate",
+                "SupervisionSignatureDate",
+                "SupervisionCompletionDate",
+                "SupervisingConsultantContractAmount",
+                "RevisedSCContractAmount",
+                "SupervisingConsultant",
+                "SupervisionProcurementNumber",
+                "WorksContractAmount",
+                "RevisedWorksContractAmount",
+                "WorksContractor",
+                "WorksProcurementNumber",
+                "ProjectTypeID",
+                "ProjectType",
+                "ProjectFunderID",
+                "ProjectStatus",
+                "HasLandAcquisitionData"
+            ], True)
+
+        return {
+            'message': 'Operation Successful.', 
+            'code': 200, 
+            'data': data,
+        }, 200
+    
 

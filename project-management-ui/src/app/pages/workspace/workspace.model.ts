@@ -30,6 +30,7 @@ export interface Project {
 
 export interface LandAcquisition {
     LandID: number;
+    Duration: Date;
     LandValued: string;
     LandAcquired: string;
     PAPsValued: string;
@@ -38,6 +39,9 @@ export interface LandAcquisition {
     AmountPaid: string;
     KMsAcquired: string;
     ProjectID?: number;
+    Status: string;
+    ModifiedBy: string;
+    LastModified: Date;    
 }
 
 export interface PhysicalProgress {
@@ -49,6 +53,19 @@ export interface PhysicalProgress {
     CummulativeActualProgress: string;
     ProjectID: number;
     PhysicalStatus: string;
+    ModifiedBy: string;
+    LastModified: Date;
+}
+
+export interface FinancialProgress {
+    FinancialID: number;
+    Duration: Date;
+    FPlannedProgress: string;
+    FActualProgress: string;
+    FCummulativePlannedProgress: string;
+    FCummulativeActualProgress: string;
+    ProjectID: number;
+    FinancialStatus: string;
     ModifiedBy: string;
     LastModified: Date;
 }

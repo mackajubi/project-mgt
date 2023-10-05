@@ -1,13 +1,13 @@
-import { CurrencyPipe, DecimalPipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { LandAcquisition, Project } from 'src/app/pages/workspace/workspace.model';
+import { LandAcquisition } from 'src/app/pages/workspace/workspace.model';
 import { ApiEndpointsService } from 'src/app/services/api-endpoints.service';
-import { ApiPayload, Employee } from 'src/app/services/api.model';
+import { ApiPayload } from 'src/app/services/api.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -15,27 +15,28 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './land-acquisition-dialog.component.html',
   styleUrls: ['./land-acquisition-dialog.component.scss']
 })
-export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterViewInit {
+export class LandAcquisitionDialogComponent implements OnInit, OnDestroy {
 
   processing = false;
   form: FormGroup;
   status = false;
   httpSub: Subscription;
-  LandID: number = null;
+  today =  new Date();
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { row: Project, action: string },
+    @Inject(MAT_DIALOG_DATA) public data: { row: LandAcquisition, ProjectNumber: string },
     private dialogRef: MatDialogRef<LandAcquisitionDialogComponent>,
     private formBuilder: FormBuilder,
     private service: ApiService,
     private endpoints: ApiEndpointsService,
     private http: HttpClient,
-    private currency: CurrencyPipe,
+    private datePipe: DatePipe,
     private number: DecimalPipe
   ) {  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({     
+      Duration: new FormControl({ value: '', disabled: true }, [Validators.required]),
       LandValued: new FormControl('', [Validators.required, Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
       LandAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
       PAPsValued: new FormControl('', [Validators.required, Validators.pattern(/^[0-9,]+$/)]),
@@ -47,40 +48,21 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
       AmountPaid: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
       KMsAcquired: new FormControl('', [Validators.pattern(/^[0-9.,]+[.]?[0-9]{1,2}$/)]),
     });   
-  } 
 
-  ngAfterViewInit(): void {
-    if (this.data.action === 'Edit') {
-      this.onFetch();
+    if (this.data.row) {
+      this.updateForm();      
     }
-  }  
+  } 
   
-  private onFetch(): void {
-    this.processing = true;
-
-    this.httpSub = this.http.get<ApiPayload>(this.endpoints.landAcquisition, {
-      params: {
-        Project: this.data.row.ProjectID.toString()
-      }
-    })
-    .pipe(catchError(this.service.handleError))
-    .subscribe((response) => {
-      console.log('response:', response);
-      this.LandID = response.data[0].LandID;
-      this.updateForm(response.data[0])
-
-      this.processing = false;
-    }, (error) => {
-      this.processing = false;
-      this.service.determineErrorResponse(error);
-    });
-  }
-
   onCloseDialog(): void {
     this.dialogRef.close({
       status: this.status,
-      row: this.data ? this.data.row : null
+      row: this.data?.row ? this.data.row : null
     });
+  }
+
+  getDateErrorMessage() {
+    return this.form.get('Duration').hasError('required') ? 'Please choose a date' : '';
   }
 
   getErrorMessage(): string {
@@ -101,24 +83,26 @@ export class LandAcquisitionDialogComponent implements OnInit, OnDestroy, AfterV
     ? 'Wrong entry. Please enter values only.' : '';
   } 
 
-  private updateForm(data: LandAcquisition): void {   
+  private updateForm(): void {   
     this.form.patchValue({
-      LandValued: this.number.transform(data.LandValued, '1.2-2'),
-      LandAcquired: this.number.transform(data.LandAcquired, '1.2-2'),
-      PAPsValued: this.number.transform(data.PAPsValued, '1.0-0'),
-      PAPsPaid: this.number.transform(data.PAPsPaid, '1.0-0'),
+      Duration: new Date(this.data.row.Duration),
+      LandValued: this.number.transform(this.data.row.LandValued, '1.2-2'),
+      LandAcquired: this.number.transform(this.data.row.LandAcquired, '1.2-2'),
+      PAPsValued: this.number.transform(this.data.row.PAPsValued, '1.0-0'),
+      PAPsPaid: this.number.transform(this.data.row.PAPsPaid, '1.0-0'),
       // AmountApproved: this.currency.transform(data.AmountApproved, 'UGX. ', 'symbol', '1.0-0'),
       // AmountPaid: this.currency.transform(data.AmountPaid, 'UGX. ', 'symbol', '1.0-0'),
-      AmountApproved: this.number.transform(data.AmountApproved, '1.2-2'),
-      AmountPaid: this.number.transform(data.AmountPaid, '1.2-2'),
-      KMsAcquired: this.number.transform(data.KMsAcquired, '1.2-2'),
+      AmountApproved: this.number.transform(this.data.row.AmountApproved, '1.2-2'),
+      AmountPaid: this.number.transform(this.data.row.AmountPaid, '1.2-2'),
+      KMsAcquired: this.number.transform(this.data.row.KMsAcquired, '1.0-2'),
     }); 
   }
 
   private getFormData(): any {
     return {
-      LandID: this.data.action === 'Edit' ? this.LandID : 0,
-      ProjectID: this.data.row.ProjectID,
+      LandID: this.data?.row ? this.data.row.LandID : 0,
+      Duration: this.datePipe.transform(this.form.get('Duration').value, 'yyyy-MM-dd'),
+      ProjectNumber: this.data.ProjectNumber,
       LandValued: (this.form.get('LandValued').value).toString().replaceAll(',', ''),
       LandAcquired: this.form.get('LandAcquired').value ? (this.form.get('LandAcquired').value).toString().replaceAll(',', '') : '',
       PAPsValued: parseInt((this.form.get('PAPsValued').value).toString().replaceAll(',', ''), 10),

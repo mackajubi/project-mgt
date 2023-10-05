@@ -1,0 +1,166 @@
+<main *ngIf="!processing">
+  
+    <form [formGroup]="form">     
+  
+      <mat-form-field class="full-width">
+        <mat-label>Project</mat-label>
+        <input matInput formControlName="ProjectName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Project Number</mat-label>
+        <input matInput formControlName="ProjectNumber">
+      </mat-form-field>         
+  
+      <mat-form-field>
+        <mat-label>Road Length</mat-label>
+        <input matInput formControlName="RoadLength">
+      </mat-form-field>
+            
+      <mat-form-field>
+        <mat-label>Surface Type</mat-label>
+        <input matInput formControlName="SurfaceType">
+      </mat-form-field>     
+      
+      <mat-form-field [ngClass]="{'no-data': !project.ProjectManager}">
+        <mat-label>Project Manager</mat-label>
+        <input matInput formControlName="ProjectManager">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.ProjectEngineer}">
+        <mat-label>Project Engineer</mat-label>
+        <input matInput formControlName="ProjectEngineer">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.WorksSignatureDate}">
+        <mat-label>Works Signature Date</mat-label>
+        <input matInput formControlName="WorksSignatureDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.CommencementDate}">
+        <mat-label>Commencement Date</mat-label>
+        <input matInput formControlName="CommencementDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.WorksCompletionDate}">
+        <mat-label>Works Completion Date</mat-label>
+        <input matInput formControlName="WorksCompletionDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.RevisedCompletionDate}">
+        <mat-label>Revised Completion Date</mat-label>
+        <input matInput formControlName="RevisedCompletionDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.SupervisionSignatureDate}">
+        <mat-label>Supervision Signature Date</mat-label>
+        <input matInput formControlName="SupervisionSignatureDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.SupervisionCompletionDate}">
+        <mat-label>Supervision Completion Date</mat-label>
+        <input matInput formControlName="SupervisionCompletionDate">
+      </mat-form-field>          
+      
+      <mat-form-field [ngClass]="{'no-data': !project.SupervisingConsultantContractAmount}">
+        <mat-label>Supervising Consultant Contract Amount</mat-label>
+        <input matInput formControlName="SupervisingConsultantContractAmount">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.RevisedSCContractAmount}">
+        <mat-label>Revised SCContract Amount</mat-label>
+        <input matInput formControlName="RevisedSCContractAmount">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.SupervisingConsultant}">
+        <mat-label>Supervising Consultant</mat-label>
+        <input matInput formControlName="SupervisingConsultant">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.SupervisionProcurementNumber}">
+        <mat-label>Supervision Procurement Number</mat-label>
+        <input matInput formControlName="SupervisionProcurementNumber">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.WorksContractAmount}">
+        <mat-label>Works Contract Amount</mat-label>
+        <input matInput formControlName="WorksContractAmount">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.RevisedWorksContractAmount}">
+        <mat-label>Revised Works Contract Amount</mat-label>
+        <input matInput formControlName="RevisedWorksContractAmount">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.WorksContractor}">
+        <mat-label>Works Contractor</mat-label>
+        <input matInput formControlName="WorksContractor">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.WorksProcurementNumber}">
+        <mat-label>Works Procurement Number</mat-label>
+        <input matInput formControlName="WorksProcurementNumber">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.ProjectType}">
+        <mat-label>Project Type</mat-label>
+        <input matInput formControlName="ProjectType">
+      </mat-form-field>    
+      
+      <mat-form-field [ngClass]="{'no-data': !project.ProjectFunderID}">
+        <mat-label>Project Funder</mat-label>
+        <input matInput formControlName="ProjectFunderID">
+      </mat-form-field>    
+      
+      <mat-form-field>
+        <mat-label>Project Status</mat-label>
+        <input matInput formControlName="ProjectStatus">
+      </mat-form-field>    
+  
+    </form>
+  
+    <mat-tab-group mat-stretch-tabs dynamicHeight class="mat-elevation-z4">
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon color="primary">waterfall_chart</mat-icon>
+          Physical Progress
+        </ng-template>
+  
+        <ng-template matTabContent>
+            <app-project-physical-progress
+                [ProjectNumber]="routeParams.ProjectNumber">
+            </app-project-physical-progress>
+        </ng-template>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon color="primary">map</mat-icon>
+          Land Acquisition
+        </ng-template>
+  
+        <ng-template matTabContent>
+            <app-project-land-acquisition 
+                [ProjectNumber]="routeParams.ProjectNumber">
+            </app-project-land-acquisition>
+        </ng-template>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon color="primary">price_check</mat-icon>
+          Financial Progress
+        </ng-template>
+  
+        <ng-template matTabContent>
+            <app-project-financial-progress
+                [ProjectNumber]="routeParams.ProjectNumber">
+            </app-project-financial-progress>
+        </ng-template>
+      </mat-tab>
+
+  
+    </mat-tab-group>
+  
+  </main>

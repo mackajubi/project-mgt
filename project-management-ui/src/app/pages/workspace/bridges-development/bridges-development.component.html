@@ -157,12 +157,12 @@
                             *ngIf="makeChanges"
                             (click)="$event.stopPropagation();onMakeChanges(row)">
                             <mat-icon color="primary">edit</mat-icon>
-                            <span>Make Changes</span>
+                            <span>Edit Project</span>
                         </button>
 
-                        <hr />                        
+                        <!-- <hr />                         -->
 
-                        <button 
+                        <!-- <button 
                             mat-menu-item 
                             (click)="$event.stopPropagation();onPhysicalProgress(row)">
                             <mat-icon color="primary">waterfall_chart</mat-icon>
@@ -170,6 +170,20 @@
                         </button>
 
                         <button 
+                            mat-menu-item 
+                            (click)="$event.stopPropagation();onFinancialProgress(row)">
+                            <mat-icon color="primary">price_check</mat-icon>
+                            <span>Financial Progress</span>
+                        </button>
+
+                        <button 
+                            mat-menu-item 
+                            (click)="$event.stopPropagation();onLandAcquisition(row)">
+                            <mat-icon color="primary">map</mat-icon>
+                            <span>Land Acquisition</span>
+                        </button> -->
+
+                        <!-- <button 
                             mat-menu-item 
                             *ngIf="row.HasLandAcquisitionData === 0"
                             (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Add')">
@@ -183,7 +197,7 @@
                             (click)="$event.stopPropagation();onManageLandAcquisitionData(row, 'Edit')">
                             <mat-icon color="primary">edit_note</mat-icon>
                             <span>Edit Land Acquisition Details</span>
-                        </button>
+                        </button> -->
 
                         <!-- <hr />                        
 
@@ -219,7 +233,7 @@
             <!-- Row shown when there is no matching data. -->
             <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && dataSource.data.length">No data matching the filter "{{input.value}}"</td>
-                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && !dataSource.data.length">No vehicles found.</td>
+                <td class="mat-cell no-items-found" colspan="10" *ngIf="dataSource && !dataSource.data.length">No projects found.</td>
             </tr>
         </table>
     </div>                

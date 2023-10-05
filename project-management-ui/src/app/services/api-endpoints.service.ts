@@ -29,11 +29,15 @@ export class ApiEndpointsService {
   
   // PROJECTS
   projects = environment.pythonApi + 'Project';  
+  getProject = environment.pythonApi + 'Project/GetProject';  
   
   // LAND ACQUISITION
   landAcquisition = environment.pythonApi + 'LandAcquisition';  
   
   // PHYSICAL PROGRESS
   physicalProgress = environment.pythonApi + 'PhysicalProgress';  
+  
+  // FINANCIAL PROGRESS
+  financialProgress = environment.pythonApi + 'FinancialProgress';  
   
 }

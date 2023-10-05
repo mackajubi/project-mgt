@@ -1,0 +1,8 @@
+version: '3'
+services:
+    api:
+        build: .
+        container_name: project-management
+        ports:
+        - "1013:80"
+        restart: always
