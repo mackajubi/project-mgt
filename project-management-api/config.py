@@ -79,17 +79,17 @@ mail = Mail(app)
 
 
 # Database variables
-# Dev Machine
+# PROD Machine
 driver      = os.getenv('DATABASE_DRIVER')
 server_name = os.getenv('DATABASE_SERVER')
 db_name     = 'ProjectMgt'
 uid         = os.getenv('DATABASE_UID')
 password    = os.getenv('DATABASE_PWD')
 
-# # ON-PREM PROD
+# # # ON-PREM PROD
 # driver      = "{ODBC Driver 17 for SQL Server}"
 # server_name = '192.168.26.107'
-# db_name     = 'WorkloadAnalysisTool'
+# db_name     = 'ProjectMgt'
 # uid         = 'eclipse-3'
 # password    = 'QW!Aub&pSjB@5'
 

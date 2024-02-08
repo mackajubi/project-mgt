@@ -54,7 +54,7 @@ def error_handler(error):
 def create_app():
     api.init_app(app)
     HOST = os.environ.get('SERVER_HOST', '0.0.0.0')
-    app.run(HOST, 1014, debug = True)
+    app.run(HOST, 1015, debug = True)
 
 if __name__ == '__main__':
     create_app()

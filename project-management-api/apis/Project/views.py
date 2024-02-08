@@ -4,7 +4,11 @@ from flask_jwt_extended import (
     get_jwt_identity    
 )
 from helpers import utils
-from apis.Project.parsers import project_parser, get_project_parser
+from apis.Project.parsers import (
+    project_parser, 
+    get_project_parser,
+    get_project_by_ref_parser 
+)
 from apis.Project.models import project_model
 
 api = Namespace('Projects', description='Project endpoints.')
@@ -206,5 +210,38 @@ class Project(Resource):
             'code': 200, 
             'data': data,
         }, 200
+    
+@api.route('/GetProjectByReferenceNumber')
+class GetProjectByReferenceNumber(Resource):
+    # @jwt_required
+    @api.response(200, 'OK')
+    @api.response(400, 'Validation error')
+    @api.expect(get_project_by_ref_parser)
+    def get(self):
+
+        payload = get_project_by_ref_parser.parse_args()
+
+        sp_stmt = "exec getProjectByReferenceNumber @ProcurementNumber=?"
+
+        results = utils._do_select(sp_stmt, (payload['ReferenceNumber']))
+        
+        if results["status"] and len(results['data']):  
+
+            data = utils._object(results['data'], [
+                "ProjectManager",
+                "ProjectEngineer"
+            ], True)
+
+            return {
+                'message': 'Operation Successful.', 
+                'code': 200, 
+                'data': data[0],
+            }, 200
+        
+        return {
+            'message': 'Operation Failed.', 
+            'code': 400, 
+            'data': '',
+        }, 400
     
 
