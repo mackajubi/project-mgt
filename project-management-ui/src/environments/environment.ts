@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  pythonApi: 'http://localhost:1014/ProjectMgt/0.0.1/',
+  pythonApi: 'http://localhost:1013/ProjectMgt/0.0.1/',
   // pythonApi: 'https://online.unra.go.ug/workloadanalysisproxy/WorkloadAnalysis/0.0.1/',
-  unraGen: 'http://192.168.26.135:1001/gen/api/v1.0/',
+  unraGen: 'https://eservices.unra.go.ug/unramasterapi/',
   xApiKey: null,
   token: '',
   isLoggedIn: false,

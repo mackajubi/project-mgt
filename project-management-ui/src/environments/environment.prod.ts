@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   pythonApi: 'https://eservices.unra.go.ug/projectmanagementapi/ProjectMgt/0.0.1/',
   // pythonApi: 'https://eservices.unra.go.ug/projectmanagementapitest/ProjectMgt/0.0.1/',
-  unraGen: 'https://online.unra.go.ug/unragengatewayproxy/gen/api/v1.0/',
+  unraGen: 'https://eservices.unra.go.ug/unramasterapi/',
   xApiKey: null,
   token: '',
   isLoggedIn: false,  
