@@ -9,7 +9,7 @@ from api.apis.Auth.models import sso_user_login
 from api.helpers import utils, webservices
 from api.config import azureSSO
 
-api = Namespace('User Authetication', description='Authorization endpoints.')
+api = Namespace('User Authentication', description='Authorization endpoints.')
 
 #########################################################################################
 #                                                                                       #
@@ -42,8 +42,6 @@ class SingleSignOn(Resource):
             sp_stmt = "exec CRUD_User @QueryFlag=?, @Email=?"
 
             results = utils._do_select(sp_stmt, (1, payload['WorkEmail']))
-
-            print('results:', results)
 
             if results['status'] and len(results['data']):                
                 status, employee = webservices._GetEmployeeDetails(payload['WorkEmail'])
